@@ -47,7 +47,7 @@
 											<div class="col-lg-12 text-center"> 
 		
 											<p:commandButton value="Start" actionListener="#{logic.findExambyID(exam.id)}"  process="@this" 
-											styleClass="btn btn-success" rendered="#{exam.isTested ne true}" />
+											styleClass="btn btn-success" rendered="#{exam.isTested ne true and exam.isClosed ne true}" />
 											</div> 
 
 											<div class="col-lg-12 text-center"> 
