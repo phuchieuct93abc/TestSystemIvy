@@ -15,6 +15,7 @@
 	<cc:attribute name="selectedResult"></cc:attribute>
 	<cc:attribute name="results"></cc:attribute>
 	<cc:attribute name="tasks"></cc:attribute>
+	<cc:attribute name="passedResult"></cc:attribute>
 	
 </cc:interface>
 
@@ -50,7 +51,8 @@
 			<div class="container-fluid">
 				<div class="row">
 					<ic:com.axonactive.test.system.ExamInfo
-						examination="#{data.examination}"></ic:com.axonactive.test.system.ExamInfo>
+						examination="#{data.examination}" passResult="#{cc.attrs.passedResult.size()}"
+						totalResult="#{cc.attrs.results.size()}"></ic:com.axonactive.test.system.ExamInfo>
 				</div>
 				<div class="row">
 

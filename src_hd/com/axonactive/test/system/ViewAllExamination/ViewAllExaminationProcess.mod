@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 13:44:51 ICT 2017]
+[>Created: Mon Feb 20 14:03:26 ICT 2017]
 15A3674773C487BF 3.19 #module
 >Proto >Proto Collection #zClass
 Vs0 ViewAllExaminationProcess Big #zClass
@@ -233,7 +233,8 @@ in.results = [];
 		}
 
 
-	}' #txt
+	}
+	in.passedResult = ResultService.filterPassResult(in.results);' #txt
 Vs0 f20 security system #txt
 Vs0 f20 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f20 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

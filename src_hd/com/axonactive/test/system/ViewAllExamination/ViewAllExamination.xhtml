@@ -24,7 +24,9 @@
 								examSelectedEvent="#{logic.upExam}"
 								selectedExam="#{data.selectedExam}"
 								allowCreate="#{data.allowCreateExam}"
-								examinations="#{data.examinations}">
+								examinations="#{data.examinations}"
+								
+								>
 							</ic:com.axonactive.test.system.ExaminationList>
 						</div>
 						<div class="col-xs-8">
@@ -33,6 +35,8 @@
 								examination="#{data.selectedExam}"
 								selectedResult="#{data.selectedResult}"
 								results="#{data.results}"
+								passedResult="#{data.passedResult}"
+								
 								>
 							</ic:com.axonactive.test.system.ExamResult>
 

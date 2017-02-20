@@ -20,3 +20,5 @@ selectedTask ch.ivyteam.ivy.workflow.ITask #field
 selectedTask PERSISTENT #fieldModifier
 isShowValidateView Boolean #field
 isShowValidateView PERSISTENT #fieldModifier
+passedResult List<com.axonactive.test.system.model.ResultModel> #field
+passedResult PERSISTENT #fieldModifier

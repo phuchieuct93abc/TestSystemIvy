@@ -107,4 +107,9 @@ public class ResultService {
 		}
 		return correctAnswers;
 	}
+	public static List<ResultModel> filterPassResult(List<ResultModel> inputs){
+		return inputs.stream().filter(item -> item.getIsPassed()).collect(Collectors.toList());
+		
+		
+	}
 }
