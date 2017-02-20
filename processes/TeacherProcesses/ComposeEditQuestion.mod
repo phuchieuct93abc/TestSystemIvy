@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Fri Feb 17 10:40:31 ICT 2017]
+[>Created: Mon Feb 20 14:28:10 ICT 2017]
 15A4A3843021A031 3.19 #module
 >Proto >Proto Collection #zClass
 Cn0 ComposeEditQuestion Big #zClass
@@ -38,7 +38,7 @@ TaskTriggered.TYPE=0
 TaskTriggered.PRI=2
 TaskTriggered.EXROL=Everybody' #txt
 Cn0 f0 caseData businessCase.attach=true #txt
-Cn0 f0 showInStartList 1 #txt
+Cn0 f0 showInStartList 0 #txt
 Cn0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
@@ -103,7 +103,7 @@ TaskTriggered.TYPE=0
 TaskTriggered.PRI=2
 TaskTriggered.EXROL=Everybody' #txt
 Cn0 f13 caseData businessCase.attach=true #txt
-Cn0 f13 showInStartList 1 #txt
+Cn0 f13 showInStartList 0 #txt
 Cn0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>

@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Feb 15 09:13:35 ICT 2017]
+[>Created: Mon Feb 20 14:27:44 ICT 2017]
 15A3745DF38A1A4B 3.19 #module
 >Proto >Proto Collection #zClass
 Sm0 StudentViewAllExam Big #zClass
@@ -28,11 +28,21 @@ Sm0 f0 guid 15A3745DF3CB7623 #txt
 Sm0 f0 requestEnabled true #txt
 Sm0 f0 triggerEnabled false #txt
 Sm0 f0 callSignature start() #txt
+Sm0 f0 persist false #txt
+Sm0 f0 taskData 'TaskTriggered.ROL=Everybody
+TaskTriggered.EXTYPE=0
+TaskTriggered.EXPRI=2
+TaskTriggered.TYPE=0
+TaskTriggered.PRI=2
+TaskTriggered.EXROL=Everybody' #txt
 Sm0 f0 caseData businessCase.attach=true #txt
+Sm0 f0 showInStartList 0 #txt
 Sm0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>start.ivp</name>
+        <nameStyle>9,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
