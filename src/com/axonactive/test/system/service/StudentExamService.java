@@ -169,20 +169,35 @@ public class StudentExamService {
 			List<StudentAnswerModel> studentAnswerModelList = StudentAnswerConverter
 					.convertSetToListModel(StudentAnswerConverter
 							.tosetModel(liststudentAnswerEntity));
-
+			Ivy.log().info("List size" + studentAnswerModelList.size());
 			if (questionEntity.getQuestionType() == 1) {
-				questionModel.setStudentAnswer(studentAnswerModelList.get(0)
-						.getChoiceAnswer());
+				if (studentAnswerModelList != null
+						&& studentAnswerModelList.size() > 0) {
+					questionModel.setStudentAnswer(studentAnswerModelList
+							.get(0).getChoiceAnswer());
+				}
+
 			}
 			if (questionEntity.getQuestionType() == 2) {
-				List<ChoiceAnswerModel> choiceAnswers = studentAnswerModelList
-						.stream().map(item -> item.getChoiceAnswer())
-						.collect(Collectors.toList());
-				questionModel.setStudentAnswers(choiceAnswers);
+				if (studentAnswerModelList != null
+						&& studentAnswerModelList.size() > 0) {
+					List<ChoiceAnswerModel> choiceAnswers = studentAnswerModelList
+							.stream().map(item -> item.getChoiceAnswer())
+							.collect(Collectors.toList());
+					if (choiceAnswers != null && choiceAnswers.size() > 0) {
+						questionModel.setStudentAnswers(choiceAnswers);
+					}
+				}
+
 			}
 			if (questionEntity.getQuestionType() == 3) {
-				questionModel.setStudentWritingAnswer(studentAnswerModelList
-						.get(0).getWrtingAnswer());
+				if (studentAnswerModelList != null
+						&& studentAnswerModelList.size() > 0) {
+					questionModel
+							.setStudentWritingAnswer(studentAnswerModelList
+									.get(0).getWrtingAnswer());
+				}
+
 			}
 			questionModels.add(questionModel);
 
@@ -199,12 +214,6 @@ public class StudentExamService {
 		int countStudentAnswer = 0;
 		int countUserAnswer = 0;
 		for (QuestionModel questionModel : questionModels) {
-			if (questionModel.getQuestionType() == 3) {
-				if (StringUtils
-						.isEmpty(questionModel.getStudentWritingAnswer())) {
-					countWritingAnswer += 1;
-				}
-			}
 			if (questionModel.getQuestionType() == 1) {
 				if (questionModel.getStudentAnswer() != null) {
 					countStudentAnswer += 1;
