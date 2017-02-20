@@ -23,9 +23,8 @@
 								oncomplete="PF('submitDialog').show()" update=":submitDialog"
 								onclick="PF('timer').pause();" />
 							<p:commandButton value="Quit"
-								styleClass="btn btn-default pull-left"
-								actionListener="#{logic.handleStudentSubmitExam}"
-								onclick="PF('timer').pause();">
+								styleClass="btn btn-default pull-left"								
+								>
 								<p:confirm header="Confirmation" message="Are you sure?"
 									icon="ui-icon-alert" />
 							</p:commandButton>
@@ -33,8 +32,9 @@
 							<p:confirmDialog global="true" showEffect="fade"
 								hideEffect="fade" widgetVar="confirmDialog">
 								<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes"
-									icon="ui-icon-check" oncomplete="PF('submitDialog').show()"
-									update=":submitDialog" />
+									icon="ui-icon-check" oncomplete="PF('submitDialog').show()" update=":submitDialog"
+									actionListener="#{logic.handleStudentSubmitExam}" onclick="PF('timer').pause();" 
+									 />
 								<p:commandButton value="No" type="button"
 									styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
 							</p:confirmDialog>

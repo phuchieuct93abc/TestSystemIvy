@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 12:53:56 ICT 2017]
+[>Created: Mon Feb 20 15:02:59 ICT 2017]
 15A3BF38C53CBA0B 3.19 #module
 >Proto >Proto Collection #zClass
 Ds0 DisplayExamDetailProcess Big #zClass
@@ -141,6 +141,7 @@ if(in.username.isEmpty()){
 }
 
 in.totalquestion = in.examination.question.size();
+in.youranswer = 0;
 in.youranswer = StudentExamService.calculateStudentAnswer(in.examination.question);
 in.isPassed = in.result.isPassed;' #txt
 Ds0 f21 type com.axonactive.test.system.DisplayExamDetail.DisplayExamDetailData #txt
