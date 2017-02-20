@@ -40,15 +40,16 @@
 				type="unordered" itemType="none">
 
 
-				<p:commandButton 
-					styleClass="btn btn-default btn-block text-left #{cc.attrs.selectedExam.id == examination.id ? 'btn-primary':'btn-default'}"
-					value="#{examination.title} (#{examination.result.size()})"
-					 update="viewAllExamination">
-
+				<button 
+					jsf:styleClass="btn btn-default btn-block text-left #{cc.attrs.selectedExam.id == examination.id ? 'btn-primary':'btn-default'}"
+					 jsf:update="viewAllExamination">
+				#{examination.title} 
+				<span jsf:rendered="#{examination.result.size() gt 0}">(#{examination.result.size()})</span>
+				<span jsf:rendered="#{examination.result.size() eq null}">(0)</span> 
 					<f:setPropertyActionListener value="#{examination}"
 						target="#{cc.attrs.selectedExam}"></f:setPropertyActionListener>
 
-				</p:commandButton>
+				</button>
 
 			</p:dataList>
 		</div>
