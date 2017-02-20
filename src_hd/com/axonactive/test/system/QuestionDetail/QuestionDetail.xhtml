@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<cc:interface componentType="IvyComponent">	
+	<cc:attribute name="examination"></cc:attribute>
+	<cc:attribute name="isdisabled"></cc:attribute>
+</cc:interface>
+<cc:implementation>	
+			<div class="container-fluid">
+		
+		<ui:repeat var="questionInfo" value="#{cc.attrs.examination.question}"
+			varStatus="questionNo">
+
+			<div class="row">
+				#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamResult/Question')}#{questionNo.index+1}:
+				#{questionInfo.name}
+				<!-- Question has answers -->
+				<div class="row">
+					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5"
+						rendered="#{questionInfo.questionType eq 1}">
+						<p:selectOneRadio id="radioAnswer" converter="ivy.ListItem"
+						value="#{questionInfo.studentAnswer}" disabled="#{cc.attrs.isdisabled}">
+							<f:selectItems value="#{questionInfo.choiceAnswer}"
+								var="singleAnswer" itemLabel="#{singleAnswer.content}"
+								itemValue="#{singleAnswer}"  />
+						</p:selectOneRadio>						
+					</h:panelGrid>
+					<!--  Select Box -->
+					<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5"
+						rendered="#{questionInfo.questionType eq 2}">
+						<h:selectManyCheckbox value="#{questionInfo.studentAnswers}" converter="ivy.ListItem" disabled="#{cc.attrs.isdisabled}">
+							<f:selectItems value="#{questionInfo.choiceAnswer}"
+								var="singleAnswer" itemLabel="#{singleAnswer.content}"
+								itemValue="#{singleAnswer}" />
+						</h:selectManyCheckbox>
+					</h:panelGrid>
+				</div>
+				<!-- End question has answer -->
+				<!-- Start question has writing answer -->
+				<!--  Text Area -->				
+				<h:panelGrid rendered="#{questionInfo.questionType eq 3}">
+					<p:inputTextarea rows="5" cols="30" counter="display"
+						maxlength="200" counterTemplate="{0} characters remaining."
+						autoResize="false" value="#{questionInfo.studentWritingAnswer}"  disabled="#{cc.attrs.isdisabled}"/>
+					<h:outputText id="display" />
+				</h:panelGrid>
+			</div>
+		</ui:repeat>	
+	</div>
+</cc:implementation>
+</html>

@@ -1,0 +1,6 @@
+UserDetailData #class
+com.axonactive.test.system.UserDetail #namespace
+user ch.ivyteam.ivy.security.IUser #field
+user PERSISTENT #fieldModifier
+role ch.ivyteam.ivy.security.IRole #field
+role PERSISTENT #fieldModifier

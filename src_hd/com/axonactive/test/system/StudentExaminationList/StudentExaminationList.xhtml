@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+      xmlns:ic="http://ivyteam.ch/jsf/component"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:pm="http://primefaces.org/mobile">
+      
+  <cc:interface componentType="IvyComponent">
+  </cc:interface>
+  
+  <cc:implementation>
+    
+   <h:form>
+				<div class="row">
+				<ui:repeat var="exam" value="#{data.examinations}">									
+					<div class="col-sm-2">
+						<div class="panel panel-primary" style="width:250px;">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="row">
+											<div class="col-lg-12 text-center">
+												<h4>#{exam.title}</h4>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-lg-12 text-center">#{exam.time}</div>
+										</div>
+										<div class="row">
+											<div class="col-lg-12 text-center">
+												<h:outputLabel rendered="#{exam.isTested eq true}" value="Score:"/>
+												 <h:outputLabel value="#{exam.score}" rendered="#{exam.isTested == true}"/>
+													<h:outputLabel rendered="#{exam.isTested eq true and exam.isPassed eq true}"
+													 style="padding-left:5px;">
+														<i class="glyphicon glyphicon-ok" style="color: green"> </i>
+													</h:outputLabel>
+													<h:outputLabel rendered="#{exam.isTested eq true and exam.isPassed ne true}" style="padding-left:5px;">
+														<i class="glyphicon glyphicon-remove" style="color: red"></i>
+													</h:outputLabel>
+													
+											</div>	
+											
+																					
+											<div class="col-lg-12 text-center"> 
+		
+											<p:commandButton value="Start" actionListener="#{logic.findExambyID(exam.id)}"  process="@this" 
+											styleClass="btn btn-success" rendered="#{exam.isTested ne true}" />
+											</div> 
+
+											<div class="col-lg-12 text-center"> 
+														<p:commandLink actionListener="#{logic.reviewExamById(exam.id)}" process="@this" rendered="#{exam.isTested eq true}">
+														<i class="glyphicon glyphicon glyphicon-hand-right"/>
+													</p:commandLink>							
+											</div>
+											
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					</ui:repeat>					
+				</div>				 				
+			</h:form>			 
+    
+  </cc:implementation>
+</html>

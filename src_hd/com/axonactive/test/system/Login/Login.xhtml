@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+		<ui:define name="title">Login</ui:define>
+		<ui:define name="content">
+
+			<div class="container">
+				<form jsf:id="form" class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4  ">
+				<div class="alert alert-danger" jsf:rendered="#{data.isLoginSuccess == false}">#{ivy.cms.co('/system/LoginProcess/loginFailed')}</div>
+					<div class="form-group">
+						<label for="username">#{ivy.cms.co('/system/LoginProcess/username')}</label> 
+						<input type="text"
+							class="form-control" id="username" 
+							jsf:value="#{data.loginData.user.username}" />
+
+					</div>
+					<div class="form-group">
+						<label for="username">#{ivy.cms.co('/system/LoginProcess/password')}</label> 
+						<input 
+							class="form-control" id="password" type="password"
+							jsf:value="#{data.loginData.user.password}" />
+
+					</div>
+					<div class="form-group">
+							<p:commandButton  styleClass="btn btn-primary btn-block"
+								actionListener="#{logic.login}" update="form" value="#{ivy.cms.co('/Labels/SignIn')}"></p:commandButton>
+
+					</div>
+				</form>
+
+			</div>
+
+		
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

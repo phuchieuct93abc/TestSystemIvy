@@ -1,0 +1,101 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<h:body>
+	<p:dialog header="Detail" id="addEditQuestionDialog" visible="#{facesContext.validationFailed}"
+		widgetVar="addEditQuestionDialog" modal="true" appendTo="@(body)">
+		<h:form id="detailForm">
+			<p:messages id="detailMessage" />
+			<p:panelGrid columns="2" style="width:700px;">
+				<h:outputText value="Question(*)" />
+				<p:inputText value="#{data.selectedQuestion.name}" required = "true" label = "Question"
+					style="width:550px;" />
+
+				<h:outputText value="Type(*)" />
+				<p:selectOneMenu id="selectQuestionType"
+					value="#{data.selectedQuestion.questionType}">
+					<f:selectItem itemLabel="Single Choice" itemValue="1" />
+					<f:selectItem itemLabel="Multiple Choice" itemValue="2" />
+					<f:selectItem itemLabel="Writing" itemValue="3" />
+					<p:ajax update="@form" />
+				</p:selectOneMenu>
+			</p:panelGrid>
+
+			<p:dataTable var="choiceAnswer"
+				rendered="#{data.selectedQuestion.questionType ne 3}"
+				value="#{data.selectedQuestion.choiceAnswer}" rowIndexVar="rowIndex"
+				style="width:700px;">
+				<p:column headerText="Asnwer" style="width:100px;">
+					<c:set var="type" value="#{rowIndex + 1}" />
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/AddEditQuestion/Question'.concat(type))}
+					</p:column>
+
+				<p:column headerText="Content">
+					<p:inputText value="#{choiceAnswer.content}" required="true" 
+						label="#{ivy.cms.co('/Dialogs/com/axonactive/test/system/AddEditQuestion/Question'.concat(type))}" style="width:550px;">
+						
+						</p:inputText>
+				</p:column>
+			</p:dataTable>
+			<p:panelGrid columns="2">
+
+				<!-- Answer for single choice -->
+				<h:outputText value="Right Answer(*)"
+					rendered="#{data.selectedQuestion.questionType eq 1}" />
+
+				<h:panelGroup id="SingleChoice"
+					rendered="#{data.selectedQuestion.questionType eq 1}">
+					<p:selectOneMenu value="#{data.selectedQuestion.rightAnswer}"
+						rendered="#{data.selectedQuestion.questionType eq 1}">
+						<f:selectItem itemLabel="A" itemValue="A" />
+						<f:selectItem itemLabel="B" itemValue="B" />
+						<f:selectItem itemLabel="C" itemValue="C" />
+						<f:selectItem itemLabel="D" itemValue="D" />
+					</p:selectOneMenu>
+				</h:panelGroup>
+
+				<!-- Answer for multiple choice -->
+				<h:outputText value="Right Answer(*)"
+					rendered="#{data.selectedQuestion.questionType eq 2}" />
+
+				<h:panelGroup id="MultipleChoice"
+					rendered="#{data.selectedQuestion.questionType eq 2}">
+
+					<p:inputText value="#{data.selectedQuestion.rightAnswer}" validatorMessage="Example: A,B or a,b"
+						rendered="#{data.selectedQuestion.questionType eq 2}"  required = "true" label = "Answer">
+						 <f:validateRegex pattern="[a-dA-D,]+" />
+						</p:inputText>>
+				</h:panelGroup>
+
+			</p:panelGrid>
+			<h:panelGroup>
+				<br />
+				<p:commandButton value="Save" actionListener="#{logic.saveQuestion}"
+					update=":form:theTable addEditQuestionDialog"
+					oncomplete="validateToHide(args, PF('addEditQuestionDialog'));"
+					id="dialogSaveButton" />
+				<p:commandButton value="Cancel"
+					actionListener="#{logic.closeDialog}" process="@this"
+					oncomplete="PF('addEditQuestionDialog').hide();">
+					<p:resetInput target="detailForm"></p:resetInput>
+				</p:commandButton>
+			</h:panelGroup>
+
+		</h:form>
+		<script>
+			function validateToHide(args, dialog) {
+				// args is a default primefaces parameter
+				if (!args.validationFailed) {
+					dialog.hide();
+				}
+			}
+		</script>
+	</p:dialog>
+</h:body>
+</html>

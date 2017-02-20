@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+
+<cc:interface componentType="IvyComponent">
+	<cc:attribute name="result" type="java.lang.Object"></cc:attribute>
+	<cc:attribute name="examination" type="java.lang.Object"></cc:attribute>
+</cc:interface>
+
+<cc:implementation>
+<!-- 	<f:event listener="#{logic.setResult(cc.attrs.result,cc.attrs.examination)}"
+		type="preRenderComponent">
+		</f:event> -->
+
+	<div class="col-xs-6 col-sm-3 col-md-2 result-panel">
+		<div class="panel panel-primary">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-10">
+						<div class="row">
+							<div class="col-xs-12">Student: #{cc.attrs.result.username}</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">Date: #{cc.attrs.result.takenDate}</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">Score: #{cc.attrs.result.score}</div>
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<i class="glyphicon glyphicon-ok" style="color: green"
+							jsf:rendered="#{cc.attrs.result.isPassed eq true}"></i> <i
+							class="glyphicon glyphicon-remove" style="color: red"
+							jsf:rendered="#{cc.attrs.result.isPassed eq false}"></i>
+						<p:commandLink action="validateResult">
+
+							<i class="glyphicon glyphicon-chevron-right"></i>
+							<f:setPropertyActionListener value="#{data.result}" 
+							target="#{cc.attrs.result}"></f:setPropertyActionListener>
+						</p:commandLink>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<style>
+.result-panel {
+	min-width: 260px
+}
+</style>
+</cc:implementation>
+
+</html>

@@ -1,0 +1,8 @@
+StudentExaminationListData #class
+com.axonactive.test.system.StudentExaminationList #namespace
+examinations List<com.axonactive.test.system.model.ExaminationModel> #field
+examinations PERSISTENT #fieldModifier
+selectedExam com.axonactive.test.system.model.ExaminationModel #field
+selectedExam PERSISTENT #fieldModifier
+examId Integer #field
+examId PERSISTENT #fieldModifier

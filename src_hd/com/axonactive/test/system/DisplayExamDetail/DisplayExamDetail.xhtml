@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+		<ui:define name="title">Exam Detail</ui:define>
+		<ui:define name="content">
+			<h:form>
+				<p:panel>
+					<div style="float: left">
+						<h3>#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/ExamDetail')}</h3>
+					</div>
+					<div style="float: right">
+						<h3>
+							<p:commandButton value="Submit"
+								styleClass="btn btn-success pull-left"
+								actionListener="#{logic.handleStudentSubmitExam}"
+								oncomplete="PF('submitDialog').show()" update=":submitDialog"
+								onclick="PF('timer').pause()" />						
+							<p:commandButton value="Quit"
+								styleClass="btn btn-default pull-left"
+								actionListener="#{logic.handleStudentSubmitExam}"
+								onclick="PF('timer').pause();">
+								<p:confirm header="Confirmation" message="Are you sure?"
+									icon="ui-icon-alert" />
+							</p:commandButton>
+							<!-- Confirm dialog -->
+							<p:confirmDialog global="true" showEffect="fade"
+								hideEffect="fade" widgetVar="confirmDialog">
+								<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes"
+									icon="ui-icon-check" oncomplete="PF('submitDialog').show()"
+									update=":submitDialog" />
+								<p:commandButton value="No" type="button"
+									styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+							</p:confirmDialog>
+
+						</h3>
+					</div>
+					<div style="clear: both;"></div>
+				</p:panel>
+				<div>
+					<h5>
+						#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Subject')}
+						#{data.examination.title} <span style="padding-left: 113px">
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/TotalQuestion')}:
+							#{data.examination.totalQuestion} </span>
+
+
+					</h5>
+					<h5>
+						#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Date')}
+						#{data.examination.time} <span style="padding-left: 30px">
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Time')}:
+							#{data.examination.duration}
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Minute')}
+						</span>
+					</h5>
+					<div style="float: right; background: black;">
+						<h5>
+							<pe:timer id="timer" widgetVar="timer" format="HH:mm:ss"
+								timeout="#{data.examination.duration * 60}"
+								oncomplete="remoteUpdateTimer();"  />
+								<p:remoteCommand name="remoteUpdateTimer" update=":submitDialog" 
+								actionListener="#{logic.handleStudentSubmitExam}" oncomplete="PF('submitDialog').show()"/>
+						</h5>
+					</div>
+
+
+					<hr style="border-top: dotted 1px;" class="" />
+				</div>
+				<div class="container-fluid">
+					<ic:com.axonactive.test.system.QuestionDetail
+						examination="#{data.examination}">
+
+					</ic:com.axonactive.test.system.QuestionDetail>
+				</div>
+
+			</h:form>
+			<ui:include src="SubmitDialog.xhtml"></ui:include>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

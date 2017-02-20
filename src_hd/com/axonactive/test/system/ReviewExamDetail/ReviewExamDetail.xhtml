@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+		<ui:define name="title">Exam Detail</ui:define>
+		<ui:define name="content">
+			<h:form>
+				<p:panel>
+					<div style="float: left">
+						<h3>#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/ExamDetail')}</h3>
+					</div>
+					<div style="float: right">
+						<h3>
+							<p:commandButton value="Back"
+								styleClass="btn btn-default pull-left" 
+								actionListener="#{logic.backtolistexam}"/>
+						</h3>
+					</div>
+					<div style="clear: both;"></div>
+				</p:panel>
+				<div>
+					<h5>
+						#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Subject')}
+						#{data.examination.title} <span style="padding-left: 113px">
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/TotalQuestion')}:
+							#{data.examination.totalQuestion} </span>
+
+
+					</h5>
+					<h5>
+						#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Date')}
+						#{data.examination.time} <span style="padding-left: 30px">
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Time')}:
+							#{data.examination.duration}
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Minute')}
+						</span>
+					</h5>
+					<hr style="border-top: dotted 1px;" class="" />
+				</div>
+
+
+				<div id="questionForm">
+					<div class="container-fluid">
+						<ic:com.axonactive.test.system.QuestionDetail
+							examination="#{data.examination}"
+							isdisabled="#{data.isDisabled}">
+							
+						</ic:com.axonactive.test.system.QuestionDetail>
+					</div>
+				</div>				
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

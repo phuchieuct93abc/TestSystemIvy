@@ -1,0 +1,22 @@
+ViewAllExaminationData #class
+com.axonactive.test.system.ViewAllExamination #namespace
+loginData com.axonactive.test.system.LoginData #field
+loginData PERSISTENT #fieldModifier
+selectedExam com.axonactive.test.system.model.ExaminationModel #field
+selectedExam PERSISTENT #fieldModifier
+results List<com.axonactive.test.system.model.ResultModel> #field
+results PERSISTENT #fieldModifier
+examinations List<com.axonactive.test.system.model.ExaminationModel> #field
+examinations PERSISTENT #fieldModifier
+allowCreateExam Boolean #field
+allowCreateExam PERSISTENT #fieldModifier
+selectedResult com.axonactive.test.system.model.ResultModel #field
+selectedResult PERSISTENT #fieldModifier
+isResultPassed Boolean #field
+isResultPassed PERSISTENT #fieldModifier
+tasks List<ch.ivyteam.ivy.workflow.ITask> #field
+tasks PERSISTENT #fieldModifier
+selectedTask ch.ivyteam.ivy.workflow.ITask #field
+selectedTask PERSISTENT #fieldModifier
+isShowValidateView Boolean #field
+isShowValidateView PERSISTENT #fieldModifier

@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+		<ui:define name="title">showExamQuestions</ui:define>
+		<ui:define name="content">
+
+
+			<h:form id="form">
+				<p:messages id="msgs" />
+				<h:panelGrid columns="2">
+
+					<p:outputLabel value="#{ivy.cms.co('/Labels/Title')}" />
+					<p:inputText value="#{data.examinationModel.title}" required="true"
+						label="#{ivy.cms.co('/Labels/Title')}" />
+
+					<p:outputLabel value="#{ivy.cms.co('/Labels/TimeMin')}" />
+					<p:inputText value="#{data.examinationModel.duration}"
+						required="true" label="#{ivy.cms.co('/Labels/TimeMin')}" />
+
+					<p:outputLabel value="#{ivy.cms.co('/Labels/ReadyForTest')}" />
+					<p:selectBooleanCheckbox
+						value="#{data.examinationModel.isReadyForTest}" />
+
+					<p:outputLabel value="#{ivy.cms.co('/Labels/PassPercentage')}" />
+					<p:inputText value="#{data.examinationModel.passPercentage}"
+						required="true" label="#{ivy.cms.co('/Labels/PassPercentage')}" />
+				</h:panelGrid>
+
+
+				<p:commandButton update=":addEditQuestionDialog"
+					actionListener="#{logic.btnAddClick}"
+					oncomplete="PF('addEditQuestionDialog').show()" value="Add"
+					style="height:40px;" id="dialogEditButton">
+
+
+				</p:commandButton>
+
+				<p:dataTable var="question" id='theTable' scrollable="true"
+					scrollHeight="300" value="#{data.examinationModel.question}"
+					rowIndexVar="rowIndex">
+
+
+					<p:column headerText="NO">
+						<h:outputText value="#{rowIndex + 1}" />
+					</p:column>
+
+					<p:column headerText="Content">
+						<h:outputText value="#{question.name}" />
+					</p:column>
+
+					<p:column headerText="Type">
+						<c:set var="type" value="#{question.questionType}" />
+							#{ivy.cms.co('/Dialogs/com/axonactive/test/system/AddEditQuestion/'.concat(type))}
+					</p:column>
+
+					<p:column headerText="Action">
+						<p:commandButton update=":addEditQuestionDialog"
+							actionListener="#{logic.btnEditClick}"
+							oncomplete="PF('addEditQuestionDialog').show()" value="Edit"
+							style="height:40px;" id="dialogEditButton">
+							<f:setPropertyActionListener value="#{question}"
+								target="#{data.selectedQuestion}" />
+						</p:commandButton>
+						<p:outputLabel value="/" />
+						<p:commandButton value="Delete" ajax="true" process="@this"
+							actionListener="#{logic.deleteQuestion(question)}"
+							update=":form:theTable" id="deleteButton">
+						</p:commandButton>
+					</p:column>
+
+
+				</p:dataTable>
+
+				<p:commandButton actionListener="#{logic.close}" value="Close"
+					update="form" icon="ui-icon-check" />
+
+				<p:commandButton actionListener="#{logic.save}" value="Save"
+					update="form" icon="ui-icon-check" />
+
+			</h:form>
+
+			<ui:include src="AddEditQuestionDialog.xhtml"></ui:include>
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+</html>

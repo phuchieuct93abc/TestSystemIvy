@@ -1,0 +1,10 @@
+ReviewExamDetailData #class
+com.axonactive.test.system.ReviewExamDetail #namespace
+reviewExamDetailData Student.ReviewExamDetailData #field
+reviewExamDetailData PERSISTENT #fieldModifier
+examination com.axonactive.test.system.model.ExaminationModel #field
+examination PERSISTENT #fieldModifier
+examid Integer #field
+examid PERSISTENT #fieldModifier
+isDisabled Boolean #field
+isDisabled PERSISTENT #fieldModifier

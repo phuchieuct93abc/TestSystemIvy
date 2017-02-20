@@ -1,0 +1,4 @@
+QuestionDetailData #class
+com.axonactive.test.system.QuestionDetail #namespace
+examination com.axonactive.test.system.model.ExaminationModel #field
+examination PERSISTENT #fieldModifier

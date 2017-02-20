@@ -1,0 +1,14 @@
+ComposeEditTestData #class
+com.axonactive.test.system.ComposeEditTest #namespace
+examId Integer #field
+examId PERSISTENT #fieldModifier
+examinationModel com.axonactive.test.system.model.ExaminationModel #field
+examinationModel PERSISTENT #fieldModifier
+questionModel com.axonactive.test.system.model.QuestionModel #field
+questionModel PERSISTENT #fieldModifier
+selectedQuestion com.axonactive.test.system.model.QuestionModel #field
+selectedQuestion PERSISTENT #fieldModifier
+editedQuestionIds java.util.Set<Integer> #field
+editedQuestionIds PERSISTENT #fieldModifier
+isEditQuestion Boolean #field
+isEditQuestion PERSISTENT #fieldModifier

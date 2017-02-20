@@ -1,0 +1,12 @@
+LoginData #class
+com.axonactive.test.system.Login #namespace
+loginData com.axonactive.test.system.LoginData #field
+loginData PERSISTENT #fieldModifier
+isLoginSuccess Boolean #field
+isLoginSuccess PERSISTENT #fieldModifier
+role ch.ivyteam.ivy.security.IRole #field
+role PERSISTENT #fieldModifier
+nextUrl String #field
+nextUrl PERSISTENT #fieldModifier
+isLogin Boolean #field
+isLogin PERSISTENT #fieldModifier

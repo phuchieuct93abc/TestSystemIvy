@@ -1,0 +1,109 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
+
+<cc:interface componentType="IvyComponent">
+	<cc:attribute name="examination">
+	</cc:attribute>
+	<cc:attribute name="selectedResult"></cc:attribute>
+	<cc:attribute name="results"></cc:attribute>
+	<cc:attribute name="tasks"></cc:attribute>
+	
+</cc:interface>
+
+<cc:implementation>
+
+	<f:event listener="#{logic.reload(cc.attrs.examination,cc.attrs.tasks)}"
+		type="preRenderComponent">
+	</f:event>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="container-fluid">
+				<div class="row">
+					<h4 class="col-xs-8">#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamResult/ExamResult')}</h4>
+					<div class="col-xs-4"
+						jsf:rendered="#{data.examination.isClosed ne true}">
+						<p:commandButton styleClass="btn btn-default pull-right"
+							actionListener="#{logic.editTest}"
+							value="#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamResult/Edit')}"></p:commandButton>
+						<p:commandButton update="@form"
+							styleClass="btn btn-danger pull-right"
+							actionListener="#{logic.closeTest}"
+							value="#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamResult/Close')}"></p:commandButton>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="panel-body ">
+
+			<div class="container-fluid">
+				<div class="row">
+					<ic:com.axonactive.test.system.ExamInfo
+						examination="#{data.examination}"></ic:com.axonactive.test.system.ExamInfo>
+				</div>
+				<div class="row">
+
+					<ui:repeat var="result" value="#{cc.attrs.results}" varStatus="status">
+						<div class="col-xs-6 col-sm-3 col-md-2 result-panel">
+							<div class="panel panel-primary">
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-xs-10">
+											<div class="row">
+												<div class="col-xs-12">Student: #{result.username}</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">Date: #{result.takenDate}</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">Score: #{result.score}</div>
+											</div>
+										</div>
+										<div class="col-xs-2">
+											<i class="glyphicon glyphicon-ok" style="color: green"
+												jsf:rendered="#{result.isPassed eq true}"></i> <i
+												class="glyphicon glyphicon-remove" style="color: red"
+												jsf:rendered="#{result.isPassed ne true}"></i>
+
+											<p:commandLink action="#{logic.validateTask(result)}">
+												<i class="glyphicon glyphicon-chevron-right"></i>
+
+											
+											</p:commandLink>
+
+
+
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<style>
+.result-panel {
+	min-width: 260px
+}
+</style>
+
+
+
+					</ui:repeat>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+
+</cc:implementation>
+</html>

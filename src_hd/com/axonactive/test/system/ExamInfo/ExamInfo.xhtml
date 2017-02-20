@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:cc="http://xmlns.jcp.org/jsf/composite"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+		xmlns:jsf="http://xmlns.jcp.org/jsf">
+	
+
+<cc:interface componentType="IvyComponent">
+	<cc:attribute name="examination"></cc:attribute>
+</cc:interface>
+
+<cc:implementation>
+
+	<div class="exam-detail col-xs-12">
+	
+			<div class="row">
+				<div class="col-xs-8 col-sm-6 col-md-5 col-lg-4">#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamResult/Subject')}
+				#{cc.attrs.examination.title} </div>
+				<div class="col-xs-8 col-sm-6 col-md-5 col-lg-4">#{ivy.cms.co('/Labels/Time')}
+				#{cc.attrs.examination.duration} #{ivy.cms.co('/Labels/Minutes')} </div>
+			</div>
+		
+		
+	
+		<div class="row">
+			<div class="col-xs-8 col-sm-6 col-md-5 col-lg-4">#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamInfo/CreatedDate')}: #{cc.attrs.examination.time}</div> 
+			
+			
+			<div class="col-xs-8 col-sm-6 col-md-5 col-lg-4">#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamInfo/Passed')}:</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">Status: 
+			<span class="text-danger" jsf:rendered="#{cc.attrs.examination.isClosed}">Closed</span>
+			<span class="text-success" jsf:rendered="#{!cc.attrs.examination.isClosed}">Open</span>
+			
+			</div> 
+			
+			
+		
+		</div>
+	</div>
+
+
+</cc:implementation>
+</html>
