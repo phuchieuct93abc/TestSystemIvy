@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 12:33:38 ICT 2017]
+[>Created: Mon Feb 20 12:39:48 ICT 2017]
 15A3674773C487BF 3.19 #module
 >Proto >Proto Collection #zClass
 Vs0 ViewAllExaminationProcess Big #zClass
@@ -54,8 +54,7 @@ Vs0 @PushWFArc f19 '' #zField
 Vs0 @GridStep f17 '' #zField
 Vs0 @RichDialogProcessEnd f5 '' #zField
 Vs0 @PushWFArc f6 '' #zField
-Vs0 @RichDialogEnd f18 '' #zField
-Vs0 @PushWFArc f22 '' #zField
+Vs0 @PushWFArc f7 '' #zField
 >Proto Vs0 Vs0 ViewAllExaminationProcess #zField
 Vs0 f0 guid 15A367477621F4FF #txt
 Vs0 f0 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
@@ -148,7 +147,16 @@ Vs0 f23 actionCode 'import com.axonactive.test.system.util.Utils;
 import javax.faces.context.FacesContext;
 in.isShowValidateView = null;' #txt
 Vs0 f23 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f23 149 560 112 44 0 -8 #rect
+Vs0 f23 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Back to main screen</name>
+        <nameStyle>19,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Vs0 f23 277 560 128 44 -56 -8 #rect
 Vs0 f23 @|StepIcon #fIcon
 Vs0 f24 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
@@ -158,7 +166,16 @@ Vs0 f24 actionCode 'import com.axonactive.test.system.service.ResultService;
 ResultService.updateIsPassed(in.selectedResult.id,in.isResultPassed);
 in.selectedResult.isPassed = in.isResultPassed;' #txt
 Vs0 f24 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f24 165 464 112 44 0 -8 #rect
+Vs0 f24 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Validate result</name>
+        <nameStyle>15,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Vs0 f24 165 464 112 44 -39 -8 #rect
 Vs0 f24 @|StepIcon #fIcon
 Vs0 f25 guid 15A4124114EEC1C8 #txt
 Vs0 f25 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
@@ -175,7 +192,7 @@ Vs0 f25 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f25 64 569 26 26 -13 15 #rect
+Vs0 f25 80 569 26 26 -13 15 #rect
 Vs0 f25 @|RichDialogProcessStartIcon #fIcon
 Vs0 f26 guid 15A4124114E12333 #txt
 Vs0 f26 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
@@ -200,14 +217,14 @@ Vs0 f26 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Vs0 f26 80 473 26 26 -21 15 #rect
 Vs0 f26 @|RichDialogMethodStartIcon #fIcon
 Vs0 f27 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f27 328 569 26 26 0 12 #rect
+Vs0 f27 432 569 26 26 0 12 #rect
 Vs0 f27 @|RichDialogProcessEndIcon #fIcon
 Vs0 f28 expr out #txt
-Vs0 f28 261 582 328 582 #arcP
+Vs0 f28 405 582 432 582 #arcP
 Vs0 f29 expr out #txt
 Vs0 f29 106 486 165 486 #arcP
 Vs0 f31 expr out #txt
-Vs0 f31 90 582 149 582 #arcP
+Vs0 f31 106 582 277 582 #arcP
 Vs0 f35 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
 Vs0 f35 actionTable 'out=in;
@@ -357,10 +374,19 @@ in.isShowValidateView = true;
 
 ' #txt
 Vs0 f40 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f40 178 135 112 44 0 -8 #rect
+Vs0 f40 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Start validate result screen</name>
+        <nameStyle>28,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Vs0 f40 154 135 160 44 -72 -8 #rect
 Vs0 f40 @|StepIcon #fIcon
 Vs0 f43 expr out #txt
-Vs0 f43 103 157 178 157 #arcP
+Vs0 f43 103 157 154 157 #arcP
 Vs0 f41 guid 15A4642C562CEC71 #txt
 Vs0 f41 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f41 method updateExam() #txt
@@ -441,13 +467,11 @@ Vs0 f5 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData
 Vs0 f5 339 147 26 26 0 12 #rect
 Vs0 f5 @|RichDialogProcessEndIcon #fIcon
 Vs0 f6 expr out #txt
-Vs0 f6 290 157 339 159 #arcP
-Vs0 f18 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f18 guid 15A5A02BFDA1C835 #txt
-Vs0 f18 403 467 26 26 0 12 #rect
-Vs0 f18 @|RichDialogEndIcon #fIcon
-Vs0 f22 expr out #txt
-Vs0 f22 277 486 403 480 #arcP
+Vs0 f6 314 157 339 159 #arcP
+Vs0 f7 expr out #txt
+Vs0 f7 277 486 341 560 #arcP
+Vs0 f7 1 304 486 #addKink
+Vs0 f7 0 0.936100720775598 0 0 #arcLabel
 >Proto Vs0 .type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt
 >Proto Vs0 -8 -8 16 16 16 26 #rect
@@ -484,5 +508,5 @@ Vs0 f20 mainOut f4 tail #connect
 Vs0 f4 head f3 mainIn #connect
 Vs0 f40 mainOut f6 tail #connect
 Vs0 f6 head f5 mainIn #connect
-Vs0 f24 mainOut f22 tail #connect
-Vs0 f22 head f18 mainIn #connect
+Vs0 f24 mainOut f7 tail #connect
+Vs0 f7 head f23 mainIn #connect
