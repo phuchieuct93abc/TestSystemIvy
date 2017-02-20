@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 09:02:59 ICT 2017]
+[>Created: Mon Feb 20 11:27:58 ICT 2017]
 15A3BA8E0CFEEF6B 3.19 #module
 >Proto >Proto Collection #zClass
 Dl0 DisplayExamDetail Big #zClass
@@ -26,8 +26,6 @@ Dl0 @RichDialog f19 '' #zField
 Dl0 @RichDialog f16 '' #zField
 Dl0 @EndTask f1 '' #zField
 Dl0 @PushWFArc f18 '' #zField
-Dl0 @PushWFArc f7 '' #zField
-Dl0 @PushWFArc f8 '' #zField
 Dl0 @EndTask f10 '' #zField
 Dl0 @RichDialog f11 '' #zField
 Dl0 @TaskSwitch f12 '' #zField
@@ -35,6 +33,7 @@ Dl0 @SignalStartEvent f13 '' #zField
 Dl0 @TkArc f14 '' #zField
 Dl0 @PushWFArc f17 '' #zField
 Dl0 @PushWFArc f21 '' #zField
+Dl0 @PushWFArc f22 '' #zField
 >Proto Dl0 Dl0 DisplayExamDetail #zField
 Dl0 f0 outLink start.ivp #txt
 Dl0 f0 type Student.DisplayExamDetailData #txt
@@ -179,7 +178,7 @@ Dl0 f19 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Dl0 f19 1122 43 112 44 -34 -8 #rect
+Dl0 f19 1122 123 112 44 -34 -8 #rect
 Dl0 f19 @|RichDialogIcon #fIcon
 Dl0 f16 targetWindow NEW #txt
 Dl0 f16 targetDisplay TOP #txt
@@ -210,10 +209,6 @@ Dl0 f1 1443 50 30 30 0 15 #rect
 Dl0 f1 @|EndIcon #fIcon
 Dl0 f18 expr out #txt
 Dl0 f18 1370 65 1443 65 #arcP
-Dl0 f7 expr out #txt
-Dl0 f7 1234 65 1258 65 #arcP
-Dl0 f8 expr out #txt
-Dl0 f8 1102 64 1122 65 #arcP
 Dl0 f10 type Student.DisplayExamDetailData #txt
 Dl0 f10 571 270 30 30 0 15 #rect
 Dl0 f10 @|EndIcon #fIcon
@@ -298,6 +293,8 @@ Dl0 f17 530 285 571 285 #arcP
 Dl0 f21 expr data #txt
 Dl0 f21 outCond ivp=="TaskA.ivp" #txt
 Dl0 f21 362 285 418 285 #arcP
+Dl0 f22 expr out #txt
+Dl0 f22 1102 64 1258 65 #arcP
 >Proto Dl0 .type Student.DisplayExamDetailData #txt
 >Proto Dl0 .processKind NORMAL #txt
 >Proto Dl0 0 0 32 24 18 0 #rect
@@ -310,15 +307,13 @@ Dl0 f9 mainOut f20 tail #connect
 Dl0 f20 head f15 mainIn #connect
 Dl0 f2 mainOut f6 tail #connect
 Dl0 f6 head f9 mainIn #connect
-Dl0 f19 mainOut f7 tail #connect
-Dl0 f7 head f16 mainIn #connect
 Dl0 f16 mainOut f18 tail #connect
 Dl0 f18 head f1 mainIn #connect
-Dl0 f15 mainOut f8 tail #connect
-Dl0 f8 head f19 mainIn #connect
 Dl0 f11 mainOut f17 tail #connect
 Dl0 f17 head f10 mainIn #connect
 Dl0 f13 mainOut f14 tail #connect
 Dl0 f14 head f12 in #connect
 Dl0 f12 out f21 tail #connect
 Dl0 f21 head f11 mainIn #connect
+Dl0 f15 mainOut f22 tail #connect
+Dl0 f22 head f16 mainIn #connect
