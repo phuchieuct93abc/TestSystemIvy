@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.apache.commons.lang.StringUtils;
+
 import ch.ivyteam.ivy.environment.Ivy;
 
 import com.axonactive.test.system.DAO.ExaminationDAO;
@@ -72,7 +74,7 @@ public class StudentExamService {
 
 			handleSingleChoiceQuestion(username, questionEntity, questionModel);
 			handleMultiChoiceQuestion(username, questionEntity, questionModel);
-			 handleWritingAnswer(username, questionEntity, questionModel);
+			handleWritingAnswer(username, questionEntity, questionModel);
 
 		}
 		PersistenceService.getPersistence().merge(examEntity);
@@ -101,8 +103,8 @@ public class StudentExamService {
 		if (questionModel.getQuestionType().equals(
 				QuestionTypeEnum.multiChoice.getQuestionTypeNumber())) {
 
-			if(questionModel.getStudentAnswers().size() > 0 && 
-					questionModel.getStudentAnswers()!= null){
+			if (questionModel.getStudentAnswers().size() > 0
+					&& questionModel.getStudentAnswers() != null) {
 				for (ChoiceAnswerModel choiceAnswer : questionModel
 						.getStudentAnswers()) {
 
@@ -130,16 +132,16 @@ public class StudentExamService {
 					.setChoiceAnswer(questionModel.getStudentAnswer());
 			StudentAnswerEntity studentAnswer = StudentAnswerConverter
 					.toEntity(studentAnswerModel);
-			if(studentAnswerModel.getChoiceAnswer() != null){
+			if (studentAnswerModel.getChoiceAnswer() != null) {
 				studentAnswer.setQuestion(questionEntity);
 				ChoiceAnswerEntity choiceAnswerEntity = ChoiceAnswerService
 						.findEntityById(studentAnswerModel.getChoiceAnswer()
 								.getId());
 				choiceAnswerEntity.getStudentAnswers().add(studentAnswer);
 				studentAnswer.setChoiceAnswer(choiceAnswerEntity);
-				questionEntity.getStudentAnswer().add(studentAnswer);			
+				questionEntity.getStudentAnswer().add(studentAnswer);
 
-			}			
+			}
 		}
 	}
 
@@ -190,6 +192,29 @@ public class StudentExamService {
 		examModel.setTotalQuestion(total);
 
 		return examModel;
+	}
+
+	public static int calculateStudentAnswer(Set<QuestionModel> questionModels) {
+		int countWritingAnswer = 0;
+		int countStudentAnswer = 0;
+		int countUserAnswer = 0;
+		for (QuestionModel questionModel : questionModels) {
+			if (questionModel.getQuestionType() == 3) {
+				if (StringUtils
+						.isEmpty(questionModel.getStudentWritingAnswer())) {
+					countWritingAnswer += 1;
+				}
+			}
+			if (questionModel.getQuestionType() == 1) {
+				if (questionModel.getStudentAnswer() != null) {
+					countStudentAnswer += 1;
+				}
+			}
+			if (questionModel.getQuestionType() == 2) {
+				countUserAnswer = questionModel.getStudentAnswers().size();
+			}
+		}
+		return countStudentAnswer + countUserAnswer + countWritingAnswer;
 	}
 
 }
