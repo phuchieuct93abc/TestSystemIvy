@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Wed Feb 15 10:44:02 ICT 2017]
+[>Created: Mon Feb 20 10:45:44 ICT 2017]
 15A3540CF8AF1A53 3.19 #module
 >Proto >Proto Collection #zClass
 Ls0 LoginProcess Big #zClass
@@ -30,12 +30,14 @@ Ls0 @RichDialogEnd f27 '' #zField
 Ls0 @PushWFArc f14 '' #zField
 Ls0 @PushWFArc f15 '' #zField
 Ls0 @GridStep f8 '' #zField
-Ls0 @PushWFArc f13 '' #zField
 Ls0 @Alternative f16 '' #zField
 Ls0 @PushWFArc f17 '' #zField
 Ls0 @PushWFArc f2 '' #zField
 Ls0 @RichDialogEnd f18 '' #zField
 Ls0 @PushWFArc f19 '' #zField
+Ls0 @GridStep f20 '' #zField
+Ls0 @PushWFArc f21 '' #zField
+Ls0 @PushWFArc f13 '' #zField
 >Proto Ls0 Ls0 LoginProcess #zField
 Ls0 f0 guid 15A3540CF9F1BAEC #txt
 Ls0 f0 type com.axonactive.test.system.Login.LoginData #txt
@@ -60,7 +62,7 @@ Ls0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Ls0 f0 83 51 26 26 -44 15 #rect
 Ls0 f0 @|RichDialogInitStartIcon #fIcon
 Ls0 f1 type com.axonactive.test.system.Login.LoginData #txt
-Ls0 f1 467 51 26 26 0 12 #rect
+Ls0 f1 659 51 26 26 0 12 #rect
 Ls0 f1 @|RichDialogProcessEndIcon #fIcon
 Ls0 f3 guid 15A3540CFAC20F1D #txt
 Ls0 f3 type com.axonactive.test.system.Login.LoginData #txt
@@ -109,6 +111,7 @@ Ls0 f9 actionTable 'out=in;
 ' #txt
 Ls0 f9 actionCode 'String username = in.loginData.user.username;
 String password = in.loginData.user.password;
+ivy.log.debug("AAAAAAAAAAAAAA"+in.loginData.user.getUsername());
 in.isLoginSuccess = ivy.session.loginSessionUser(username,password);' #txt
 Ls0 f9 type com.axonactive.test.system.Login.LoginData #txt
 Ls0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -174,26 +177,39 @@ Ls0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Ls0 f8 152 42 144 44 -63 -8 #rect
+Ls0 f8 344 42 144 44 -63 -8 #rect
 Ls0 f8 @|StepIcon #fIcon
-Ls0 f13 expr out #txt
-Ls0 f13 109 64 152 64 #arcP
 Ls0 f16 type com.axonactive.test.system.Login.LoginData #txt
-Ls0 f16 368 48 32 32 0 16 #rect
+Ls0 f16 560 48 32 32 0 16 #rect
 Ls0 f16 @|AlternativeIcon #fIcon
 Ls0 f17 expr out #txt
-Ls0 f17 296 64 368 64 #arcP
+Ls0 f17 488 64 560 64 #arcP
 Ls0 f2 expr in #txt
 Ls0 f2 outCond !in.isLogin #txt
-Ls0 f2 400 64 467 64 #arcP
+Ls0 f2 592 64 659 64 #arcP
 Ls0 f18 type com.axonactive.test.system.Login.LoginData #txt
 Ls0 f18 guid 15A3FD8069A876F8 #txt
-Ls0 f18 467 115 26 26 0 12 #rect
+Ls0 f18 659 115 26 26 0 12 #rect
 Ls0 f18 @|RichDialogEndIcon #fIcon
 Ls0 f19 expr in #txt
-Ls0 f19 389 75 467 128 #arcP
-Ls0 f19 1 416 128 #addKink
+Ls0 f19 581 75 659 128 #arcP
+Ls0 f19 1 608 128 #addKink
 Ls0 f19 0 0.9320363473197659 0 0 #arcLabel
+Ls0 f20 actionDecl 'com.axonactive.test.system.Login.LoginData out;
+' #txt
+Ls0 f20 actionTable 'out=in;
+' #txt
+Ls0 f20 actionCode 'import com.axonactive.test.system.User;
+import com.axonactive.test.system.LoginData;
+in.loginData = new LoginData();
+in.loginData.user = new User();' #txt
+Ls0 f20 type com.axonactive.test.system.Login.LoginData #txt
+Ls0 f20 168 42 112 44 0 -8 #rect
+Ls0 f20 @|StepIcon #fIcon
+Ls0 f21 expr out #txt
+Ls0 f21 109 64 168 64 #arcP
+Ls0 f13 expr out #txt
+Ls0 f13 280 64 344 64 #arcP
 >Proto Ls0 .type com.axonactive.test.system.Login.LoginData #txt
 >Proto Ls0 .processKind HTML_DIALOG #txt
 >Proto Ls0 -8 -8 16 16 16 26 #rect
@@ -208,11 +224,13 @@ Ls0 f14 head f7 mainIn #connect
 Ls0 f11 out f15 tail #connect
 Ls0 f15 head f27 mainIn #connect
 Ls0 f11 out f14 tail #connect
-Ls0 f0 mainOut f13 tail #connect
-Ls0 f13 head f8 mainIn #connect
 Ls0 f8 mainOut f17 tail #connect
 Ls0 f17 head f16 in #connect
 Ls0 f16 out f2 tail #connect
 Ls0 f2 head f1 mainIn #connect
 Ls0 f16 out f19 tail #connect
 Ls0 f19 head f18 mainIn #connect
+Ls0 f0 mainOut f21 tail #connect
+Ls0 f21 head f20 mainIn #connect
+Ls0 f20 mainOut f13 tail #connect
+Ls0 f13 head f8 mainIn #connect

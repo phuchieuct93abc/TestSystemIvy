@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Sun Feb 19 17:56:58 ICT 2017]
+[>Created: Mon Feb 20 10:24:44 ICT 2017]
 15A3674773C487BF 3.19 #module
 >Proto >Proto Collection #zClass
 Vs0 ViewAllExaminationProcess Big #zClass
@@ -38,7 +38,6 @@ Vs0 @RichDialogProcessEnd f36 '' #zField
 Vs0 @GridStep f20 '' #zField
 Vs0 @PushWFArc f21 '' #zField
 Vs0 @PushWFArc f10 '' #zField
-Vs0 @PushWFArc f18 '' #zField
 Vs0 @GridStep f8 '' #zField
 Vs0 @PushWFArc f32 '' #zField
 Vs0 @PushWFArc f38 '' #zField
@@ -55,6 +54,7 @@ Vs0 @PushWFArc f30 '' #zField
 Vs0 @GridStep f14 '' #zField
 Vs0 @PushWFArc f15 '' #zField
 Vs0 @PushWFArc f16 '' #zField
+Vs0 @PushWFArc f2 '' #zField
 >Proto Vs0 Vs0 ViewAllExaminationProcess #zField
 Vs0 f0 guid 15A367477621F4FF #txt
 Vs0 f0 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
@@ -300,8 +300,6 @@ Vs0 f21 expr out #txt
 Vs0 f21 616 64 672 64 #arcP
 Vs0 f10 expr out #txt
 Vs0 f10 949 64 1011 64 #arcP
-Vs0 f18 expr out #txt
-Vs0 f18 784 64 837 64 #arcP
 Vs0 f8 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
 Vs0 f8 actionTable 'out=in;
@@ -364,7 +362,7 @@ Vs0 f39 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f39 277 192 26 26 -77 15 #rect
+Vs0 f39 77 144 26 26 -77 15 #rect
 Vs0 f39 @|RichDialogInitStartIcon #fIcon
 Vs0 f40 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
@@ -382,12 +380,12 @@ in.isShowValidateView = true;
 
 ' #txt
 Vs0 f40 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f40 338 135 112 44 0 -8 #rect
+Vs0 f40 178 135 112 44 0 -8 #rect
 Vs0 f40 @|StepIcon #fIcon
 Vs0 f43 expr out #txt
-Vs0 f43 301 199 346 179 #arcP
+Vs0 f43 103 157 178 157 #arcP
 Vs0 f44 expr out #txt
-Vs0 f44 394 135 384 86 #arcP
+Vs0 f44 234 135 384 86 #arcP
 Vs0 f41 guid 15A4642C562CEC71 #txt
 Vs0 f41 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f41 method updateExam() #txt
@@ -440,6 +438,8 @@ Vs0 f15 expr out #txt
 Vs0 f15 101 352 136 352 #arcP
 Vs0 f16 expr out #txt
 Vs0 f16 280 352 331 352 #arcP
+Vs0 f2 expr out #txt
+Vs0 f2 784 64 1011 64 #arcP
 >Proto Vs0 .type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt
 >Proto Vs0 -8 -8 16 16 16 26 #rect
@@ -458,8 +458,6 @@ Vs0 f11 mainOut f21 tail #connect
 Vs0 f21 head f9 mainIn #connect
 Vs0 f20 mainOut f10 tail #connect
 Vs0 f10 head f1 mainIn #connect
-Vs0 f9 mainOut f18 tail #connect
-Vs0 f18 head f20 mainIn #connect
 Vs0 f35 mainOut f32 tail #connect
 Vs0 f32 head f8 mainIn #connect
 Vs0 f8 mainOut f38 tail #connect
@@ -478,3 +476,5 @@ Vs0 f12 mainOut f15 tail #connect
 Vs0 f15 head f14 mainIn #connect
 Vs0 f14 mainOut f16 tail #connect
 Vs0 f16 head f13 mainIn #connect
+Vs0 f9 mainOut f2 tail #connect
+Vs0 f2 head f1 mainIn #connect

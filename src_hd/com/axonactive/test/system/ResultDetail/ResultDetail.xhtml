@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile"
+		xmlns:jsf="http://xmlns.jcp.org/jsf">
+	
+<h:body>
+	<ui:composition template="/layouts/basic.xhtml">
+		<ui:define name="title">ResultDetail</ui:define>
+		<ui:define name="content">
+
+			<h:form id="form">
+				<h:panelGrid columns="2">
+					<f:facet name="header">
+						<p:messages></p:messages>
+					</f:facet>
+
+					<!-- No 'form field [Integer]' template found for field 'result.id'. -->
+					<p:outputLabel value="Examination title" />
+					<p:outputLabel value="#{data.result.exam.title}"></p:outputLabel>
+					<p:outputLabel value="Username" />
+					<p:outputLabel value="#{data.result.username}"></p:outputLabel>
+					<p:outputLabel value="Status" />
+					<p:column>
+						<div class="text-success"
+							jsf:rendered="#{data.result.isPassed eq true}">Pass</div>
+
+						<div class="text-danger"
+							jsf:rendered="#{data.result.isPassed eq false}">Fail</div>
+					</p:column>
+
+					<p:outputLabel value="Score" />
+					<p:outputLabel value="#{data.result.score}"></p:outputLabel>
+					<p:outputLabel value="Date" />
+					<p:outputLabel value="#{data.result.takenDate}"></p:outputLabel>
+
+			
+					<br />
+					<p:column rowspan="2">
+<p:commandButton actionListener="#{logic.close()}" value="Close"
+						icon="ui-icon-check" />
+						</p:column>
+					
+				</h:panelGrid>
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

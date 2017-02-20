@@ -28,8 +28,7 @@ public class ResultService {
 
 	public static List<ITask> getTaskByExaminationId(Integer examId) {
 		TaskQuery taskQuery = TaskQuery.create().where().currentUserCanWorkOn()
-				.and().customVarCharField1().isEqual(String.valueOf(examId))
-				.and().category().isEqual(EXAMINATION_CATEGORY);
+				.and().customVarCharField1().isEqual(String.valueOf(examId));
 		return Ivy.wf().getTaskQueryExecutor().getResults(taskQuery);
 
 	}

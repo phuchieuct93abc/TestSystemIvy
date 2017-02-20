@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <richDialogDescriptor>
     <autoScreenshot>true</autoScreenshot>
+    <method>
+        <name>close</name>
+        <description></description>
+    </method>
     <startMethod>
         <name>start</name>
-        <description></description>
+        <description>Default dialog start method.</description>
         <inputParameter>
-            <name>exam</name>
+            <name>result</name>
             <description></description>
-            <parameterType>com.axonactive.test.system.model.ExaminationModel</parameterType>
+            <parameterType>com.axonactive.test.system.model.ResultModel</parameterType>
             <nullPermitted>false</nullPermitted>
         </inputParameter>
         <outputParameter>
-            <name>exam</name>
+            <name>result</name>
             <description></description>
-            <parameterType>com.axonactive.test.system.model.ExaminationModel</parameterType>
+            <parameterType>com.axonactive.test.system.model.ResultModel</parameterType>
             <nullPermitted>false</nullPermitted>
         </outputParameter>
     </startMethod>
     <property>
         <name>guid</name>
-        <value>15A3BF38C5D687E3</value>
+        <value>15A593477AE76F24</value>
         <readOnly>true</readOnly>
     </property>
     <property>

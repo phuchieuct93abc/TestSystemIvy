@@ -1,0 +1,4 @@
+ResultDetailData #class
+com.axonactive.test.system.ResultDetail #namespace
+result com.axonactive.test.system.model.ResultModel #field
+result PERSISTENT #fieldModifier
