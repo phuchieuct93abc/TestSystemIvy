@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="title">Html Dialogs Demo</ui:insert></title>
+	<link rel="shortcut icon" href="#{resource['ivy-webcontent:layouts/images/ivy_favicon_48.png']}" />
+
+	<!-- Bootstrap CSS -->
+	<!-- You can also load bootstrap from an external CDN: //http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css -->
+	<h:outputStylesheet name="layouts/styles/bootstrap-modified-for-jsf.css" />
+	<h:outputStylesheet name="layouts/styles/bootstrap-reset.css" />
+	<h:outputStylesheet name="layouts/styles/ivy-common-6.css" />
+	<h:outputStylesheet name="layouts/styles/style.css" />
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.js"></script>
+  <![endif]-->
+</h:head>
+<h:body>
+	<div class="navbar navbar-top">
+		<div class="container" id="headerdiv">
+			<div class="navbar-header">
+			  <a class="ivy-logo" href="#{ivy.html.startref('Demo/start.ivp')}">
+		  	    <h:graphicImage name="layouts/images/axon_ivy_6_logo.png" alt="Axon.ivy" />
+              </a>
+			</div>
+			<div class="pull-right themeswitcher">
+				<h:form id="themeswitcher">
+					<h:panelGrid columns="2">
+						<!-- See Designer Documentation about Themes or the PublicAPI of IvyPrimefacesThemeResolver for more information -->
+						<p:outputLabel value="Theme" />
+						<p:themeSwitcher id="basic"
+							value="#{ivyPrimefacesThemeResolver.sessionTheme}" style="width: 80px;">
+							<f:selectItems value="#{ivyPrimefacesThemeResolver.themes}"
+								var="theme" itemLabel="#{theme}" itemValue="#{theme}" />
+							<p:ajax />
+						</p:themeSwitcher>
+					</h:panelGrid>
+				</h:form>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+		
+			<div class="col-xs-12">
+				<h2>
+					<ui:insert name="title">Html Dialog Demos</ui:insert>
+				</h2>
+				<ui:insert name="content">
+					<!-- The actual page content is inserted here -->
+				</ui:insert>
+			</div>
+		</div>
+		<ui:insert name="footer">
+			<hr />
+			<footer>
+				Powered by <a href="http://developer.axonivy.com">Axon.ivy</a>
+				Copyright &#169; <a href="http://www.axonivy.com">AXON IVY AG</a>
+			</footer>
+		</ui:insert>
+	</div>
+</h:body>
+</html>
