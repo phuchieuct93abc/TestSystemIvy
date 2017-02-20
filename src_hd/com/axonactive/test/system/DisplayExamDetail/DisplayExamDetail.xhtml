@@ -21,7 +21,7 @@
 								styleClass="btn btn-success pull-left"
 								actionListener="#{logic.handleStudentSubmitExam}"
 								oncomplete="PF('submitDialog').show()" update=":submitDialog"
-								onclick="PF('timer').pause()" />						
+								onclick="PF('timer').pause();" />
 							<p:commandButton value="Quit"
 								styleClass="btn btn-default pull-left"
 								actionListener="#{logic.handleStudentSubmitExam}"
@@ -64,9 +64,10 @@
 						<h5>
 							<pe:timer id="timer" widgetVar="timer" format="HH:mm:ss"
 								timeout="#{data.examination.duration * 60}"
-								oncomplete="remoteUpdateTimer();" binding="#{data.yourtime}" />								
-								<p:remoteCommand name="remoteUpdateTimer" update=":submitDialog" 
-								actionListener="#{logic.handleStudentSubmitExam}" oncomplete="PF('submitDialog').show()"/>
+								oncomplete="remoteUpdateTimer();" binding="#{data.yourtime}" />
+							<p:remoteCommand name="remoteUpdateTimer" update=":submitDialog"
+								actionListener="#{logic.handleStudentSubmitExam}"
+								oncomplete="PF('submitDialog').show()" />
 						</h5>
 					</div>
 
@@ -80,7 +81,7 @@
 					</ic:com.axonactive.test.system.QuestionDetail>
 				</div>
 
-			</h:form>
+			</h:form>			
 			<ui:include src="SubmitDialog.xhtml"></ui:include>
 		</ui:define>
 	</ui:composition>
