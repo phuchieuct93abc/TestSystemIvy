@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 12:49:29 ICT 2017]
+[>Created: Mon Feb 20 13:26:16 ICT 2017]
 15A3674773C487BF 3.19 #module
 >Proto >Proto Collection #zClass
 Vs0 ViewAllExaminationProcess Big #zClass
@@ -471,10 +471,10 @@ Vs0 f6 expr out #txt
 Vs0 f6 314 157 339 159 #arcP
 Vs0 f7 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f7 guid 15A5A11479146C3E #txt
-Vs0 f7 435 467 26 26 0 12 #rect
+Vs0 f7 435 473 26 26 0 12 #rect
 Vs0 f7 @|RichDialogEndIcon #fIcon
 Vs0 f22 expr out #txt
-Vs0 f22 277 486 435 480 #arcP
+Vs0 f22 277 486 435 486 #arcP
 Vs0 f22 0 0.2303260685333445 0 0 #arcLabel
 >Proto Vs0 .type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt

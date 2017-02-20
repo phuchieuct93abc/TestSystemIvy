@@ -43,7 +43,7 @@
 				<p:commandButton 
 					styleClass="btn btn-default btn-block text-left #{cc.attrs.selectedExam.id == examination.id ? 'btn-primary':'btn-default'}"
 					value="#{examination.title} (#{examination.result.size()})"
-					 update="@all">
+					 update="viewAllExamination">
 
 					<f:setPropertyActionListener value="#{examination}"
 						target="#{cc.attrs.selectedExam}"></f:setPropertyActionListener>

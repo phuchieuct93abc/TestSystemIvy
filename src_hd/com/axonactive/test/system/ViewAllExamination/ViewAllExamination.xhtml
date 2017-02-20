@@ -10,11 +10,12 @@
 	<ui:composition template="/layouts/basic.xhtml">
 		<ui:define name="title">ViewAllExamination</ui:define>
 		<ui:define name="content" >
-		<f:event listener="#{logic.updateExam()}"
+			
+		
+			<h:form rendered="#{data.isShowValidateView ne true}" id="viewAllExamination">
+			<f:event listener="#{logic.updateExam()}"
 				type="preRenderComponent">
 			</f:event>
-		
-			<h:form rendered="#{data.isShowValidateView ne true}">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-xs-4">
