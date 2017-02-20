@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 11:43:17 ICT 2017]
+[>Created: Mon Feb 20 12:33:38 ICT 2017]
 15A3674773C487BF 3.19 #module
 >Proto >Proto Collection #zClass
 Vs0 ViewAllExaminationProcess Big #zClass
@@ -43,8 +43,6 @@ Vs0 @GridStep f40 '' #zField
 Vs0 @PushWFArc f43 '' #zField
 Vs0 @RichDialogMethodStart f41 '' #zField
 Vs0 @PushWFArc f42 '' #zField
-Vs0 @RichDialogEnd f22 '' #zField
-Vs0 @PushWFArc f30 '' #zField
 Vs0 @GridStep f14 '' #zField
 Vs0 @PushWFArc f15 '' #zField
 Vs0 @PushWFArc f16 '' #zField
@@ -56,6 +54,8 @@ Vs0 @PushWFArc f19 '' #zField
 Vs0 @GridStep f17 '' #zField
 Vs0 @RichDialogProcessEnd f5 '' #zField
 Vs0 @PushWFArc f6 '' #zField
+Vs0 @RichDialogEnd f18 '' #zField
+Vs0 @PushWFArc f22 '' #zField
 >Proto Vs0 Vs0 ViewAllExaminationProcess #zField
 Vs0 f0 guid 15A367477621F4FF #txt
 Vs0 f0 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
@@ -247,14 +247,17 @@ Vs0 f20 actionCode 'import ch.ivyteam.ivy.workflow.ITask;
 import com.axonactive.test.system.service.ResultService;
 import com.axonactive.test.system.model.ResultModel;
 
-in.results=[];
 in.tasks = ResultService.getTaskByExaminationId(in.selectedExam.id);
 in.results = [];
 	for(ITask task : in.tasks){
 		
 		Integer resultId = Integer.valueOf(task.customVarCharField2);
-	ResultModel resultModel = ResultService.findById(resultId);
-	in.results.add(resultModel);
+		ResultModel resultModel = ResultService.findById(resultId);
+		ivy.log.info(resultModel.#id);
+		if(resultModel.id != 0){
+			in.results.add(resultModel);
+		}
+
 
 	}' #txt
 Vs0 f20 security system #txt
@@ -381,12 +384,6 @@ Vs0 f41 @|RichDialogMethodStartIcon #fIcon
 Vs0 f42 expr out #txt
 Vs0 f42 93 248 237 248 #arcP
 Vs0 f42 0 0.44689524883418896 0 0 #arcLabel
-Vs0 f22 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f22 guid 15A465606CF555A3 #txt
-Vs0 f22 339 467 26 26 0 12 #rect
-Vs0 f22 @|RichDialogEndIcon #fIcon
-Vs0 f30 expr out #txt
-Vs0 f30 277 486 339 480 #arcP
 Vs0 f14 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
 Vs0 f14 actionTable 'out=in;
@@ -445,6 +442,12 @@ Vs0 f5 339 147 26 26 0 12 #rect
 Vs0 f5 @|RichDialogProcessEndIcon #fIcon
 Vs0 f6 expr out #txt
 Vs0 f6 290 157 339 159 #arcP
+Vs0 f18 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
+Vs0 f18 guid 15A5A02BFDA1C835 #txt
+Vs0 f18 403 467 26 26 0 12 #rect
+Vs0 f18 @|RichDialogEndIcon #fIcon
+Vs0 f22 expr out #txt
+Vs0 f22 277 486 403 480 #arcP
 >Proto Vs0 .type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt
 >Proto Vs0 -8 -8 16 16 16 26 #rect
@@ -471,8 +474,6 @@ Vs0 f39 mainOut f43 tail #connect
 Vs0 f43 head f40 mainIn #connect
 Vs0 f41 mainOut f42 tail #connect
 Vs0 f42 head f20 mainIn #connect
-Vs0 f24 mainOut f30 tail #connect
-Vs0 f30 head f22 mainIn #connect
 Vs0 f12 mainOut f15 tail #connect
 Vs0 f15 head f14 mainIn #connect
 Vs0 f14 mainOut f16 tail #connect
@@ -483,3 +484,5 @@ Vs0 f20 mainOut f4 tail #connect
 Vs0 f4 head f3 mainIn #connect
 Vs0 f40 mainOut f6 tail #connect
 Vs0 f6 head f5 mainIn #connect
+Vs0 f24 mainOut f22 tail #connect
+Vs0 f22 head f18 mainIn #connect
