@@ -69,7 +69,7 @@
 
 					<p:inputText value="#{data.selectedQuestion.rightAnswer}" validatorMessage="Example: A,B or a,b"
 						rendered="#{data.selectedQuestion.questionType eq 2}"  required = "true" label = "Answer">
-						 <f:validateRegex pattern="[a-dA-D,]+" />
+						 <f:validateRegex pattern="[a-dA-D][a-dA-D,]*" />
 						</p:inputText>>
 				</h:panelGroup>
 
