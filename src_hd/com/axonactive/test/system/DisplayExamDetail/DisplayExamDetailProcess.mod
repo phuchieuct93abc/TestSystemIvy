@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 10:54:30 ICT 2017]
+[>Created: Mon Feb 20 12:53:56 ICT 2017]
 15A3BF38C53CBA0B 3.19 #module
 >Proto >Proto Collection #zClass
 Ds0 DisplayExamDetailProcess Big #zClass
@@ -139,9 +139,7 @@ import java.util.Set;
 if(in.username.isEmpty()){
  in.username = ivy.session.getSessionUserName(); 
 }
-in.result = ResultService.getResult(in.listQuestion,in.examination.id,in.username);
-in.result.id= ResultService.createResult(in.result,in.examination.id);
-in.username = in.username;
+
 in.totalquestion = in.examination.question.size();
 in.youranswer = StudentExamService.calculateStudentAnswer(in.examination.question);
 in.isPassed = in.result.isPassed;' #txt

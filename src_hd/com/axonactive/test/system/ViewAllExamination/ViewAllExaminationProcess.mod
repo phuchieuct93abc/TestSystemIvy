@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 12:39:48 ICT 2017]
+[>Created: Mon Feb 20 12:49:29 ICT 2017]
 15A3674773C487BF 3.19 #module
 >Proto >Proto Collection #zClass
 Vs0 ViewAllExaminationProcess Big #zClass
@@ -54,7 +54,8 @@ Vs0 @PushWFArc f19 '' #zField
 Vs0 @GridStep f17 '' #zField
 Vs0 @RichDialogProcessEnd f5 '' #zField
 Vs0 @PushWFArc f6 '' #zField
-Vs0 @PushWFArc f7 '' #zField
+Vs0 @RichDialogEnd f7 '' #zField
+Vs0 @PushWFArc f22 '' #zField
 >Proto Vs0 Vs0 ViewAllExaminationProcess #zField
 Vs0 f0 guid 15A367477621F4FF #txt
 Vs0 f0 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
@@ -468,10 +469,13 @@ Vs0 f5 339 147 26 26 0 12 #rect
 Vs0 f5 @|RichDialogProcessEndIcon #fIcon
 Vs0 f6 expr out #txt
 Vs0 f6 314 157 339 159 #arcP
-Vs0 f7 expr out #txt
-Vs0 f7 277 486 341 560 #arcP
-Vs0 f7 1 304 486 #addKink
-Vs0 f7 0 0.936100720775598 0 0 #arcLabel
+Vs0 f7 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
+Vs0 f7 guid 15A5A11479146C3E #txt
+Vs0 f7 435 467 26 26 0 12 #rect
+Vs0 f7 @|RichDialogEndIcon #fIcon
+Vs0 f22 expr out #txt
+Vs0 f22 277 486 435 480 #arcP
+Vs0 f22 0 0.2303260685333445 0 0 #arcLabel
 >Proto Vs0 .type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt
 >Proto Vs0 -8 -8 16 16 16 26 #rect
@@ -508,5 +512,5 @@ Vs0 f20 mainOut f4 tail #connect
 Vs0 f4 head f3 mainIn #connect
 Vs0 f40 mainOut f6 tail #connect
 Vs0 f6 head f5 mainIn #connect
-Vs0 f24 mainOut f7 tail #connect
-Vs0 f7 head f23 mainIn #connect
+Vs0 f24 mainOut f22 tail #connect
+Vs0 f22 head f7 mainIn #connect
