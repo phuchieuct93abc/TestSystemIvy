@@ -14,3 +14,9 @@ result com.axonactive.test.system.model.ResultModel #field
 result PERSISTENT #fieldModifier
 username String #field
 username PERSISTENT #fieldModifier
+totalquestion Integer #field
+totalquestion PERSISTENT #fieldModifier
+youranswer Integer #field
+youranswer PERSISTENT #fieldModifier
+yourtime String #field
+yourtime PERSISTENT #fieldModifier

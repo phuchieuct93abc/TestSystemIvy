@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 07:39:23 ICT 2017]
+[>Created: Mon Feb 20 10:42:34 ICT 2017]
 15A3BF38C53CBA0B 3.19 #module
 >Proto >Proto Collection #zClass
 Ds0 DisplayExamDetailProcess Big #zClass
@@ -226,17 +226,20 @@ Ds0 f21 actionDecl 'com.axonactive.test.system.DisplayExamDetail.DisplayExamDeta
 ' #txt
 Ds0 f21 actionTable 'out=in;
 ' #txt
-Ds0 f21 actionCode 'import com.axonactive.test.system.service.ResultService;
+Ds0 f21 actionCode 'import com.axonactive.test.system.service.StudentExamService;
+import org.apache.commons.lang.StringUtils;
+import ch.ivyteam.util.StringUtil;
+import com.axonactive.test.system.model.QuestionModel;
+import com.axonactive.test.system.service.ResultService;
+import java.util.Set;
 if(in.username.isEmpty()){
-	in.username = ivy.session.getSessionUserName();	
+ in.username = ivy.session.getSessionUserName(); 
 }
 in.result = ResultService.getResult(in.listQuestion,in.examination.id,in.username);
 in.result.id= ResultService.createResult(in.result,in.examination.id);
 in.username = in.username;
-in.score = in.result.score;
-if(in.score == null || in.score == ""){
-		in.score  = 0;
-	}
+in.totalquestion = in.examination.question.size();
+in.youranswer = StudentExamService.calculateStudentAnswer(in.examination.question);
 in.isPassed = in.result.isPassed;' #txt
 Ds0 f21 type com.axonactive.test.system.DisplayExamDetail.DisplayExamDetailData #txt
 Ds0 f21 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

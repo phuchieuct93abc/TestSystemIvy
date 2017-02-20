@@ -8,30 +8,27 @@
 	xmlns:pm="http://primefaces.org/mobile"
 	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
 <h:body>
-	<p:dialog header="Info" id="submitDialog" widgetVar="submitDialog"
-		modal="true" appendTo="@(body)"
+	<p:dialog header="Information" id="submitDialog"
+		widgetVar="submitDialog" modal="true" appendTo="@(body)"
 		visible="#{facesContext.validationFailed}" closable="false"
 		width="200">
 		<h:form id="dialogDetail">
 			<div class="row">
-				#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Score')}
-				#{data.result.score}</div>
+				#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/TotalQuestion')}:
+				#{data.totalquestion}</div>
 			<div class="row">
-				<h:outputLabel
-					rendered="#{data.result.isPassed eq true}"
-					style="padding-left:5px;">
-					<i class="glyphicon glyphicon-ok" style="color: green"> </i>
-				</h:outputLabel>
-				<h:outputLabel
-					rendered="#{data.result.isPassed ne true}"
-					style="padding-left:5px;">
-					<i class="glyphicon glyphicon-remove" style="color: red"></i>
-				</h:outputLabel>
-			</div>			
-			<div class="row col-lg-12 text-center">
-				<p:commandButton value="Submit"
-					styleClass="btn btn-primary pull-left"
-					actionListener="#{logic.redirectToExamList}" />
+				#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Yourtime')}
+
+			</div>
+			<div class="row">
+				#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamDetail/Youranswer')}
+				#{data.youranswer}/#{data.totalquestion}</div>
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<p:commandButton value="Close"
+						styleClass="btn btn-primary pull-left"
+						actionListener="#{logic.redirectToExamList}" />
+				</div>
 			</div>
 
 		</h:form>
