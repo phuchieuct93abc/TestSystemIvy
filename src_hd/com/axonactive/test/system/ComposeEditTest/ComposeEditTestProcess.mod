@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 11:11:00 ICT 2017]
+[>Created: Mon Feb 20 11:33:30 ICT 2017]
 15A3BA9F2655CF82 3.19 #module
 >Proto >Proto Collection #zClass
 ss0 ComposeEditTestProcess Big #zClass
@@ -162,7 +162,8 @@ ss0 f16 actionTable 'out=in;
 ' #txt
 ss0 f16 actionCode 'import com.axonactive.test.system.model.ExaminationModel;
 import com.axonactive.test.system.util.QuestionUtil;
-QuestionUtil.convertExamWithSortedSetQuestion(in.examinationModel);' #txt
+QuestionUtil.convertExamWithSortedSetQuestion(in.examinationModel);
+in.examinationModel.duration = 60;' #txt
 ss0 f16 type com.axonactive.test.system.ComposeEditTest.ComposeEditTestData #txt
 ss0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
