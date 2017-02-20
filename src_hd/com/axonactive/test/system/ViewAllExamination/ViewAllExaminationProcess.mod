@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Mon Feb 20 10:24:44 ICT 2017]
+[>Created: Mon Feb 20 11:43:17 ICT 2017]
 15A3674773C487BF 3.19 #module
 >Proto >Proto Collection #zClass
 Vs0 ViewAllExaminationProcess Big #zClass
@@ -17,13 +17,10 @@ Vs0 @TextInP .xml .xml #zField
 Vs0 @TextInP .responsibility .responsibility #zField
 Vs0 @RichDialogInitStart f0 '' #zField
 Vs0 @RichDialogProcessEnd f1 '' #zField
-Vs0 @RichDialogProcessEnd f7 '' #zField
 Vs0 @RichDialogProcessStart f12 '' #zField
 Vs0 @RichDialogProcessEnd f13 '' #zField
-Vs0 @GridStep f17 '' #zField
 Vs0 @GridStep f9 '' #zField
 Vs0 @GridStep f11 '' #zField
-Vs0 @PushWFArc f19 '' #zField
 Vs0 @GridStep f23 '' #zField
 Vs0 @GridStep f24 '' #zField
 Vs0 @RichDialogProcessStart f25 '' #zField
@@ -32,12 +29,10 @@ Vs0 @RichDialogProcessEnd f27 '' #zField
 Vs0 @PushWFArc f28 '' #zField
 Vs0 @PushWFArc f29 '' #zField
 Vs0 @PushWFArc f31 '' #zField
-Vs0 @PushWFArc f34 '' #zField
 Vs0 @GridStep f35 '' #zField
 Vs0 @RichDialogProcessEnd f36 '' #zField
 Vs0 @GridStep f20 '' #zField
 Vs0 @PushWFArc f21 '' #zField
-Vs0 @PushWFArc f10 '' #zField
 Vs0 @GridStep f8 '' #zField
 Vs0 @PushWFArc f32 '' #zField
 Vs0 @PushWFArc f38 '' #zField
@@ -46,7 +41,6 @@ Vs0 @PushWFArc f37 '' #zField
 Vs0 @RichDialogInitStart f39 '' #zField
 Vs0 @GridStep f40 '' #zField
 Vs0 @PushWFArc f43 '' #zField
-Vs0 @PushWFArc f44 '' #zField
 Vs0 @RichDialogMethodStart f41 '' #zField
 Vs0 @PushWFArc f42 '' #zField
 Vs0 @RichDialogEnd f22 '' #zField
@@ -55,6 +49,13 @@ Vs0 @GridStep f14 '' #zField
 Vs0 @PushWFArc f15 '' #zField
 Vs0 @PushWFArc f16 '' #zField
 Vs0 @PushWFArc f2 '' #zField
+Vs0 @RichDialogProcessEnd f3 '' #zField
+Vs0 @PushWFArc f4 '' #zField
+Vs0 @PushWFArc f34 '' #zField
+Vs0 @PushWFArc f19 '' #zField
+Vs0 @GridStep f17 '' #zField
+Vs0 @RichDialogProcessEnd f5 '' #zField
+Vs0 @PushWFArc f6 '' #zField
 >Proto Vs0 Vs0 ViewAllExaminationProcess #zField
 Vs0 f0 guid 15A367477621F4FF #txt
 Vs0 f0 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
@@ -79,9 +80,6 @@ Vs0 f0 @|RichDialogInitStartIcon #fIcon
 Vs0 f1 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f1 1011 51 26 26 0 12 #rect
 Vs0 f1 @|RichDialogProcessEndIcon #fIcon
-Vs0 f7 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f7 355 251 26 26 0 12 #rect
-Vs0 f7 @|RichDialogProcessEndIcon #fIcon
 Vs0 f12 guid 15A36D43B8A28967 #txt
 Vs0 f12 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f12 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
@@ -102,26 +100,6 @@ Vs0 f12 @|RichDialogProcessStartIcon #fIcon
 Vs0 f13 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f13 331 339 26 26 0 12 #rect
 Vs0 f13 @|RichDialogProcessEndIcon #fIcon
-Vs0 f17 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
-' #txt
-Vs0 f17 actionTable 'out=in;
-' #txt
-Vs0 f17 actionCode 'import com.axonactive.test.system.service.ExaminationService;
-import com.axonactive.test.system.model.ExaminationModel;
-in.selectedExam = new ExaminationModel();
-in.examinations = ExaminationService.findAll();' #txt
-Vs0 f17 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
-Vs0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<elementInfo>
-    <language>
-        <name>Get examinations</name>
-        <nameStyle>16,7
-</nameStyle>
-    </language>
-</elementInfo>
-' #txt
-Vs0 f17 328 42 112 44 -48 -8 #rect
-Vs0 f17 @|StepIcon #fIcon
 Vs0 f9 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
 Vs0 f9 actionTable 'out=in;
@@ -162,8 +140,6 @@ Vs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Vs0 f11 472 42 144 44 -65 -8 #rect
 Vs0 f11 @|StepIcon #fIcon
-Vs0 f19 expr out #txt
-Vs0 f19 440 64 472 64 #arcP
 Vs0 f23 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
 Vs0 f23 actionTable 'out=in;
@@ -232,8 +208,6 @@ Vs0 f29 expr out #txt
 Vs0 f29 106 486 165 486 #arcP
 Vs0 f31 expr out #txt
 Vs0 f31 90 582 149 582 #arcP
-Vs0 f34 expr out #txt
-Vs0 f34 109 64 328 64 #arcP
 Vs0 f35 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
 Vs0 f35 actionTable 'out=in;
@@ -294,12 +268,10 @@ Vs0 f20 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f20 837 42 112 44 -41 -8 #rect
+Vs0 f20 237 226 112 44 -41 -8 #rect
 Vs0 f20 @|StepIcon #fIcon
 Vs0 f21 expr out #txt
 Vs0 f21 616 64 672 64 #arcP
-Vs0 f10 expr out #txt
-Vs0 f10 949 64 1011 64 #arcP
 Vs0 f8 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
 ' #txt
 Vs0 f8 actionTable 'out=in;
@@ -368,14 +340,16 @@ Vs0 f40 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExamina
 ' #txt
 Vs0 f40 actionTable 'out=in;
 ' #txt
-Vs0 f40 actionCode 'import javax.faces.component.UIViewRoot;
+Vs0 f40 actionCode 'import com.axonactive.test.system.service.StudentExamService;
+import javax.faces.component.UIViewRoot;
 import com.axonactive.test.system.service.ExaminationService;
 import com.axonactive.test.system.service.ResultService;
 import javax.faces.context.FacesContext;
 
 
 in.selectedResult = ResultService.findById(in.selectedResult.id);
-in.selectedExam = ExaminationService.findById(in.selectedExam.id);
+
+in.selectedExam = StudentExamService.findExamreviewbyStudent(in.selectedExam.id);
 in.isShowValidateView = true;
 
 ' #txt
@@ -384,8 +358,6 @@ Vs0 f40 178 135 112 44 0 -8 #rect
 Vs0 f40 @|StepIcon #fIcon
 Vs0 f43 expr out #txt
 Vs0 f43 103 157 178 157 #arcP
-Vs0 f44 expr out #txt
-Vs0 f44 234 135 384 86 #arcP
 Vs0 f41 guid 15A4642C562CEC71 #txt
 Vs0 f41 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f41 method updateExam() #txt
@@ -404,12 +376,11 @@ Vs0 f41 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f41 571 131 26 26 -38 15 #rect
+Vs0 f41 67 235 26 26 -38 15 #rect
 Vs0 f41 @|RichDialogMethodStartIcon #fIcon
 Vs0 f42 expr out #txt
-Vs0 f42 597 144 893 86 #arcP
-Vs0 f42 1 768 144 #addKink
-Vs0 f42 0 0.8070263876325661 0 0 #arcLabel
+Vs0 f42 93 248 237 248 #arcP
+Vs0 f42 0 0.44689524883418896 0 0 #arcLabel
 Vs0 f22 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 Vs0 f22 guid 15A465606CF555A3 #txt
 Vs0 f22 339 467 26 26 0 12 #rect
@@ -440,6 +411,40 @@ Vs0 f16 expr out #txt
 Vs0 f16 280 352 331 352 #arcP
 Vs0 f2 expr out #txt
 Vs0 f2 784 64 1011 64 #arcP
+Vs0 f3 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
+Vs0 f3 443 235 26 26 0 12 #rect
+Vs0 f3 @|RichDialogProcessEndIcon #fIcon
+Vs0 f4 expr out #txt
+Vs0 f4 349 248 443 248 #arcP
+Vs0 f34 expr out #txt
+Vs0 f34 109 64 328 64 #arcP
+Vs0 f19 expr out #txt
+Vs0 f19 440 64 472 64 #arcP
+Vs0 f17 actionDecl 'com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData out;
+' #txt
+Vs0 f17 actionTable 'out=in;
+' #txt
+Vs0 f17 actionCode 'import com.axonactive.test.system.service.ExaminationService;
+import com.axonactive.test.system.model.ExaminationModel;
+in.selectedExam = new ExaminationModel();
+in.examinations = ExaminationService.findAll();' #txt
+Vs0 f17 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
+Vs0 f17 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Get examinations</name>
+        <nameStyle>16,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Vs0 f17 328 42 112 44 -48 -8 #rect
+Vs0 f17 @|StepIcon #fIcon
+Vs0 f5 type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
+Vs0 f5 339 147 26 26 0 12 #rect
+Vs0 f5 @|RichDialogProcessEndIcon #fIcon
+Vs0 f6 expr out #txt
+Vs0 f6 290 157 339 159 #arcP
 >Proto Vs0 .type com.axonactive.test.system.ViewAllExamination.ViewAllExaminationData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt
 >Proto Vs0 -8 -8 16 16 16 26 #rect
@@ -456,8 +461,6 @@ Vs0 f0 mainOut f34 tail #connect
 Vs0 f34 head f17 mainIn #connect
 Vs0 f11 mainOut f21 tail #connect
 Vs0 f21 head f9 mainIn #connect
-Vs0 f20 mainOut f10 tail #connect
-Vs0 f10 head f1 mainIn #connect
 Vs0 f35 mainOut f32 tail #connect
 Vs0 f32 head f8 mainIn #connect
 Vs0 f8 mainOut f38 tail #connect
@@ -466,8 +469,6 @@ Vs0 f33 mainOut f37 tail #connect
 Vs0 f37 head f35 mainIn #connect
 Vs0 f39 mainOut f43 tail #connect
 Vs0 f43 head f40 mainIn #connect
-Vs0 f40 mainOut f44 tail #connect
-Vs0 f44 head f17 mainIn #connect
 Vs0 f41 mainOut f42 tail #connect
 Vs0 f42 head f20 mainIn #connect
 Vs0 f24 mainOut f30 tail #connect
@@ -478,3 +479,7 @@ Vs0 f14 mainOut f16 tail #connect
 Vs0 f16 head f13 mainIn #connect
 Vs0 f9 mainOut f2 tail #connect
 Vs0 f2 head f1 mainIn #connect
+Vs0 f20 mainOut f4 tail #connect
+Vs0 f4 head f3 mainIn #connect
+Vs0 f40 mainOut f6 tail #connect
+Vs0 f6 head f5 mainIn #connect

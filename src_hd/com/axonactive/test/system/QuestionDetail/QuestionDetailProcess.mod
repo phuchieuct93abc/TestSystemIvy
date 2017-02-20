@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Feb 16 17:29:26 ICT 2017]
+[>Created: Mon Feb 20 11:36:11 ICT 2017]
 15A3BF866F3BCA75 3.19 #module
 >Proto >Proto Collection #zClass
 Qs0 QuestionDetailProcess Big #zClass
@@ -105,12 +105,12 @@ Qs0 f9 actionDecl 'com.axonactive.test.system.QuestionDetail.QuestionDetailData 
 Qs0 f9 actionTable 'out=in;
 ' #txt
 Qs0 f9 type com.axonactive.test.system.QuestionDetail.QuestionDetailData #txt
-Qs0 f9 168 234 112 44 0 -8 #rect
+Qs0 f9 200 234 112 44 0 -8 #rect
 Qs0 f9 @|StepIcon #fIcon
 Qs0 f10 expr out #txt
-Qs0 f10 109 256 168 256 #arcP
+Qs0 f10 109 256 200 256 #arcP
 Qs0 f8 expr out #txt
-Qs0 f8 280 256 339 256 #arcP
+Qs0 f8 312 256 339 256 #arcP
 >Proto Qs0 .type com.axonactive.test.system.QuestionDetail.QuestionDetailData #txt
 >Proto Qs0 .processKind HTML_DIALOG #txt
 >Proto Qs0 -8 -8 16 16 16 26 #rect
