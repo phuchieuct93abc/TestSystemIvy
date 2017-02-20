@@ -1,0 +1,6 @@
+User #class
+com.axonactive.test.system #namespace
+username String #field
+username 'Login username' #fieldComment
+password String #field
+password 'Login password' #fieldComment

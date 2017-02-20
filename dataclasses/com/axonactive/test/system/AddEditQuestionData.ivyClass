@@ -1,0 +1,6 @@
+AddEditQuestionData #class
+com.axonactive.test.system #namespace
+examID Integer #field
+examID PERSISTENT #fieldModifier
+questionModel com.axonactive.test.system.model.QuestionModel #field
+questionModel PERSISTENT #fieldModifier

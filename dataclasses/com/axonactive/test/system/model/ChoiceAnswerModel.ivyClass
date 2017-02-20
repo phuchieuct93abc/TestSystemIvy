@@ -1,0 +1,8 @@
+ChoiceAnswerModel #class
+com.axonactive.test.system.model #namespace
+id Integer #field
+id PERSISTENT #fieldModifier
+content String #field
+content PERSISTENT #fieldModifier
+isCorrect Boolean #field
+isCorrect PERSISTENT #fieldModifier

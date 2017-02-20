@@ -1,0 +1,10 @@
+CalculateResultData #class
+Student #namespace
+question java.util.List<com.axonactive.test.system.model.QuestionModel> #field
+question PERSISTENT #fieldModifier
+result com.axonactive.test.system.model.ResultModel #field
+result PERSISTENT #fieldModifier
+username String #field
+username PERSISTENT #fieldModifier
+examId Integer #field
+examId PERSISTENT #fieldModifier

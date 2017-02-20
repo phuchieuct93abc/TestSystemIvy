@@ -1,0 +1,23 @@
+ChoiceAnswerEntity #class
+true #isEntity
+com.axonactive.test.system.entity #namespace
+ChoiceAnswer #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+content String #field
+content PERSISTENT #fieldModifier
+isCorrect Boolean #field
+isCorrect PERSISTENT #fieldModifier
+question com.axonactive.test.system.entity.QuestionEntity #field
+question PERSISTENT #fieldModifier
+question NOT_NULLABLE #fieldModifier
+question MANY_TO_ONE #fieldAssociation
+question #fieldCascadeTypes
+studentAnswers java.util.Set<com.axonactive.test.system.entity.StudentAnswerEntity> #field
+studentAnswers PERSISTENT #fieldModifier
+studentAnswers ONE_TO_MANY #fieldAssociation
+studentAnswers ALL #fieldCascadeTypes
+studentAnswers choiceAnswer #mappedByFieldName

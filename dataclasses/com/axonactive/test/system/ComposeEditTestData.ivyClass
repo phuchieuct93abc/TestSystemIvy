@@ -1,0 +1,8 @@
+ComposeEditTestData #class
+com.axonactive.test.system #namespace
+examId Integer #field
+examId PERSISTENT #fieldModifier
+examinationModel com.axonactive.test.system.model.ExaminationModel #field
+examinationModel PERSISTENT #fieldModifier
+questionId Integer #field
+questionId PERSISTENT #fieldModifier

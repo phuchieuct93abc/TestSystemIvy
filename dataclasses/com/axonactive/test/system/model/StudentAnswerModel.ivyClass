@@ -1,0 +1,10 @@
+StudentAnswerModel #class
+com.axonactive.test.system.model #namespace
+id Integer #field
+id PERSISTENT #fieldModifier
+username String #field
+username PERSISTENT #fieldModifier
+choiceAnswer com.axonactive.test.system.model.ChoiceAnswerModel #field
+choiceAnswer PERSISTENT #fieldModifier
+wrtingAnswer String #field
+wrtingAnswer PERSISTENT #fieldModifier

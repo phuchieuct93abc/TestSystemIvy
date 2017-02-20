@@ -1,0 +1,24 @@
+QuestionModel #class
+com.axonactive.test.system.model #namespace
+name String #field
+name PERSISTENT #fieldModifier
+questionType Integer #field
+questionType PERSISTENT #fieldModifier
+rightAnswer String #field
+rightAnswer PERSISTENT #fieldModifier
+answerModel java.util.List<com.axonactive.test.system.model.ChoiceAnswerModel> #field
+answerModel PERSISTENT #fieldModifier
+answers List<String> #field
+answers PERSISTENT #fieldModifier
+choiceAnswer java.util.List<com.axonactive.test.system.model.ChoiceAnswerModel> #field
+choiceAnswer PERSISTENT #fieldModifier
+id Integer #field
+id PERSISTENT #fieldModifier
+studentAnswers java.util.List<com.axonactive.test.system.model.ChoiceAnswerModel> #field
+studentAnswers PERSISTENT #fieldModifier
+studentAnswer com.axonactive.test.system.model.ChoiceAnswerModel #field
+studentAnswer PERSISTENT #fieldModifier
+studentWritingAnswer String #field
+studentWritingAnswer PERSISTENT #fieldModifier
+listStudentAnswer java.util.List<com.axonactive.test.system.model.StudentAnswerModel> #field
+listStudentAnswer PERSISTENT #fieldModifier

@@ -1,0 +1,14 @@
+ResultModel #class
+com.axonactive.test.system.model #namespace
+id Integer #field
+id PERSISTENT #fieldModifier
+username String #field
+username PERSISTENT #fieldModifier
+score Integer #field
+score PERSISTENT #fieldModifier
+takenDate java.util.Date #field
+takenDate PERSISTENT #fieldModifier
+isPassed Boolean #field
+isPassed PERSISTENT #fieldModifier
+exam com.axonactive.test.system.model.ExaminationModel #field
+exam PERSISTENT #fieldModifier

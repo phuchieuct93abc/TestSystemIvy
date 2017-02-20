@@ -1,0 +1,30 @@
+QuestionEntity #class
+true #isEntity
+com.axonactive.test.system.entity #namespace
+Question #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+name String #field
+name PERSISTENT #fieldModifier
+questionType Integer #field
+questionType PERSISTENT #fieldModifier
+choicesAnswer java.util.Set<com.axonactive.test.system.entity.ChoiceAnswerEntity> #field
+choicesAnswer PERSISTENT #fieldModifier
+choicesAnswer ONE_TO_MANY #fieldAssociation
+choicesAnswer ALL #fieldCascadeTypes
+choicesAnswer true #removeOrphans
+choicesAnswer question #mappedByFieldName
+examination com.axonactive.test.system.entity.ExaminationEntity #field
+examination PERSISTENT #fieldModifier
+examination NOT_NULLABLE #fieldModifier
+examination MANY_TO_ONE #fieldAssociation
+examination PERSIST MERGE REFRESH #fieldCascadeTypes
+studentAnswer java.util.Set<com.axonactive.test.system.entity.StudentAnswerEntity> #field
+studentAnswer PERSISTENT #fieldModifier
+studentAnswer ONE_TO_MANY #fieldAssociation
+studentAnswer ALL #fieldCascadeTypes
+studentAnswer true #removeOrphans
+studentAnswer question #mappedByFieldName

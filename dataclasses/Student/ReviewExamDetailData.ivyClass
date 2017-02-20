@@ -1,0 +1,8 @@
+ReviewExamDetailData #class
+Student #namespace
+examination com.axonactive.test.system.model.ExaminationModel #field
+examination PERSISTENT #fieldModifier
+examid Integer #field
+examid PERSISTENT #fieldModifier
+questions java.util.List<com.axonactive.test.system.model.QuestionModel> #field
+questions PERSISTENT #fieldModifier

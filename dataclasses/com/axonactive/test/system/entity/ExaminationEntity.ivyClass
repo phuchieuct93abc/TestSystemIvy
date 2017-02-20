@@ -1,0 +1,32 @@
+ExaminationEntity #class
+true #isEntity
+com.axonactive.test.system.entity #namespace
+Examination #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+title String #field
+title PERSISTENT #fieldModifier
+time java.util.Date #field
+time exam_time #dbFieldName
+time PERSISTENT #fieldModifier
+isReadyForTest Boolean #field
+isReadyForTest PERSISTENT #fieldModifier
+passPercentage Integer #field
+passPercentage PERSISTENT #fieldModifier
+questions java.util.Set<com.axonactive.test.system.entity.QuestionEntity> #field
+questions PERSISTENT #fieldModifier
+questions ONE_TO_MANY #fieldAssociation
+questions ALL #fieldCascadeTypes
+questions examination #mappedByFieldName
+duration Integer #field
+duration PERSISTENT #fieldModifier
+results java.util.Set<com.axonactive.test.system.entity.ResultEntity> #field
+results PERSISTENT #fieldModifier
+results ONE_TO_MANY #fieldAssociation
+results ALL #fieldCascadeTypes
+results examination #mappedByFieldName
+isClosed Boolean #field
+isClosed PERSISTENT #fieldModifier

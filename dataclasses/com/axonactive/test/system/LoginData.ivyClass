@@ -1,0 +1,4 @@
+LoginData #class
+com.axonactive.test.system #namespace
+user com.axonactive.test.system.User #field
+user PERSISTENT #fieldModifier

@@ -1,0 +1,8 @@
+StartProcessData #class
+com.axonactive.test.system #namespace
+isLoginSuccess Boolean #field
+isLoginSuccess PERSISTENT #fieldModifier
+role ch.ivyteam.ivy.security.IRole #field
+role PERSISTENT #fieldModifier
+nextUrl String #field
+nextUrl PERSISTENT #fieldModifier

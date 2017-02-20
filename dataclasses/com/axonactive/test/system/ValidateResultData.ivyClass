@@ -1,0 +1,10 @@
+ValidateResultData #class
+com.axonactive.test.system #namespace
+result com.axonactive.test.system.model.ResultModel #field
+result PERSISTENT #fieldModifier
+resultId Integer #field
+resultId PERSISTENT #fieldModifier
+examination com.axonactive.test.system.model.ExaminationModel #field
+examination PERSISTENT #fieldModifier
+examinationId Integer #field
+examinationId PERSISTENT #fieldModifier

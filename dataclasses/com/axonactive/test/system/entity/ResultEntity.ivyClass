@@ -1,0 +1,21 @@
+ResultEntity #class
+true #isEntity
+com.axonactive.test.system.entity #namespace
+Result #dbTableName
+id Integer #field
+id Identifier #fieldComment
+id PERSISTENT #fieldModifier
+id ID #fieldModifier
+id GENERATED #fieldModifier
+examination com.axonactive.test.system.entity.ExaminationEntity #field
+examination PERSISTENT #fieldModifier
+examination MANY_TO_ONE #fieldAssociation
+examination ALL #fieldCascadeTypes
+username String #field
+username PERSISTENT #fieldModifier
+score Integer #field
+score PERSISTENT #fieldModifier
+takenDate java.util.Date #field
+takenDate PERSISTENT #fieldModifier
+isPassed Boolean #field
+isPassed PERSISTENT #fieldModifier

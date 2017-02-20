@@ -1,0 +1,32 @@
+ExaminationModel #class
+com.axonactive.test.system.model #namespace
+id Integer #field
+id PERSISTENT #fieldModifier
+title String #field
+title PERSISTENT #fieldModifier
+time java.util.Date #field
+time PERSISTENT #fieldModifier
+isReadyForTest Boolean #field
+isReadyForTest PERSISTENT #fieldModifier
+passPercentage Integer #field
+passPercentage PERSISTENT #fieldModifier
+question java.util.Set<com.axonactive.test.system.model.QuestionModel> #field
+question PERSISTENT #fieldModifier
+result java.util.List<com.axonactive.test.system.model.ResultModel> #field
+result PERSISTENT #fieldModifier
+duration Integer #field
+duration PERSISTENT #fieldModifier
+results java.util.Set<org.hsqldb.Result.ResultMetaData> #field
+results PERSISTENT #fieldModifier
+questionMap java.util.Map #field
+questionMap PERSISTENT #fieldModifier
+isClosed Boolean #field
+isClosed PERSISTENT #fieldModifier
+totalQuestion Number #field
+totalQuestion PERSISTENT #fieldModifier
+isPassed Boolean #field
+isPassed PERSISTENT #fieldModifier
+score Integer #field
+score PERSISTENT #fieldModifier
+isTested Boolean #field
+isTested PERSISTENT #fieldModifier
