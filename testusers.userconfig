@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<userConfig>
+    <user>
+        <username>tai</username>
+        <password>123</password>
+        <role>Teacher</role>
+    </user>
+    <user>
+        <username>tam</username>
+        <password>123</password>
+        <fullName>student</fullName>
+        <role>Student</role>
+    </user>
+    <user>
+        <username>s1</username>
+        <password>123456</password>
+        <fullName>Student 1</fullName>
+        <role>Student</role>
+    </user>
+    <user>
+        <username>s2</username>
+        <password>123456</password>
+        <fullName>Student 2</fullName>
+        <role>Student</role>
+    </user>
+    <user>
+        <username>t1</username>
+        <password>123456</password>
+        <fullName>Teacher 1</fullName>
+        <role>Teacher</role>
+    </user>
+    <user>
+        <username>t2</username>
+        <password>123456</password>
+        <fullName>Teacher 2</fullName>
+        <role>Teacher</role>
+    </user>
+    <user>
+        <username>tam1</username>
+        <password>123</password>
+        <fullName>Teacher</fullName>
+        <role>Teacher</role>
+    </user>
+</userConfig>
