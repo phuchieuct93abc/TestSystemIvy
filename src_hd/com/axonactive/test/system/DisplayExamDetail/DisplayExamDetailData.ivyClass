@@ -18,5 +18,5 @@ totalquestion Integer #field
 totalquestion PERSISTENT #fieldModifier
 youranswer Integer #field
 youranswer PERSISTENT #fieldModifier
-yourtime String #field
+yourtime org.primefaces.extensions.component.timer.Timer #field
 yourtime PERSISTENT #fieldModifier

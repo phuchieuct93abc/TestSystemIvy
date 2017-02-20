@@ -64,7 +64,7 @@
 						<h5>
 							<pe:timer id="timer" widgetVar="timer" format="HH:mm:ss"
 								timeout="#{data.examination.duration * 60}"
-								oncomplete="remoteUpdateTimer();"  />
+								oncomplete="remoteUpdateTimer();" binding="#{data.yourtime}" />								
 								<p:remoteCommand name="remoteUpdateTimer" update=":submitDialog" 
 								actionListener="#{logic.handleStudentSubmitExam}" oncomplete="PF('submitDialog').show()"/>
 						</h5>
