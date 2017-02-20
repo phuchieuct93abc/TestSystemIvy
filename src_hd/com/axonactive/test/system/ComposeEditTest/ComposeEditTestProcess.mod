@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Sun Feb 19 00:52:27 ICT 2017]
+[>Created: Mon Feb 20 11:11:00 ICT 2017]
 15A3BA9F2655CF82 3.19 #module
 >Proto >Proto Collection #zClass
 ss0 ComposeEditTestProcess Big #zClass
@@ -236,7 +236,7 @@ ss0 f22 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ss0 f22 192 330 160 44 -74 -8 #rect
+ss0 f22 480 330 160 44 -74 -8 #rect
 ss0 f22 @|StepIcon #fIcon
 ss0 f7 expr out #txt
 ss0 f7 488 552 699 552 #arcP
@@ -333,13 +333,13 @@ ss0 f28 464 632 712 565 #arcP
 ss0 f28 1 712 632 #addKink
 ss0 f28 0 0.6574388952044729 0 0 #arcLabel
 ss0 f34 type com.axonactive.test.system.ComposeEditTest.ComposeEditTestData #txt
-ss0 f34 128 336 32 32 0 16 #rect
+ss0 f34 232 336 32 32 0 16 #rect
 ss0 f34 @|AlternativeIcon #fIcon
 ss0 f35 expr out #txt
-ss0 f35 61 352 128 352 #arcP
+ss0 f35 61 352 232 352 #arcP
 ss0 f24 expr in #txt
 ss0 f24 outCond 'in.examId != 0' #txt
-ss0 f24 160 352 192 352 #arcP
+ss0 f24 264 352 480 352 #arcP
 ss0 f36 actionDecl 'com.axonactive.test.system.ComposeEditTest.ComposeEditTestData out;
 ' #txt
 ss0 f36 actionTable 'out=in;
@@ -360,11 +360,11 @@ ss0 f36 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ss0 f36 200 242 128 44 -59 -8 #rect
+ss0 f36 496 242 128 44 -59 -8 #rect
 ss0 f36 @|StepIcon #fIcon
 ss0 f38 expr in #txt
-ss0 f38 144 336 200 264 #arcP
-ss0 f38 1 144 264 #addKink
+ss0 f38 248 336 496 264 #arcP
+ss0 f38 1 248 264 #addKink
 ss0 f38 1 0.16598989244575102 0 0 #arcLabel
 ss0 f39 expr out #txt
 ss0 f39 600 160 720 77 #arcP
@@ -386,19 +386,19 @@ ss0 f40 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ss0 f40 384 330 128 44 -58 -8 #rect
+ss0 f40 752 330 128 44 -58 -8 #rect
 ss0 f40 @|StepIcon #fIcon
 ss0 f41 expr out #txt
-ss0 f41 328 264 448 330 #arcP
-ss0 f41 1 408 272 #addKink
-ss0 f41 1 0.5104427156737782 0 0 #arcLabel
+ss0 f41 624 264 816 330 #arcP
+ss0 f41 1 816 264 #addKink
+ss0 f41 0 0.8367356974425879 0 0 #arcLabel
 ss0 f37 expr out #txt
-ss0 f37 352 352 384 352 #arcP
+ss0 f37 640 352 752 352 #arcP
 ss0 f25 type com.axonactive.test.system.ComposeEditTest.ComposeEditTestData #txt
-ss0 f25 531 339 26 26 0 12 #rect
+ss0 f25 1003 339 26 26 0 12 #rect
 ss0 f25 @|RichDialogProcessEndIcon #fIcon
 ss0 f23 expr out #txt
-ss0 f23 512 352 531 352 #arcP
+ss0 f23 880 352 1003 352 #arcP
 ss0 f3 guid 15A4A5349855CE4D #txt
 ss0 f3 type com.axonactive.test.system.ComposeEditTest.ComposeEditTestData #txt
 ss0 f3 actionDecl 'com.axonactive.test.system.ComposeEditTest.ComposeEditTestData out;
@@ -412,12 +412,12 @@ ss0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-ss0 f3 55 445 26 26 -15 12 #rect
+ss0 f3 39 453 26 26 -15 12 #rect
 ss0 f3 @|RichDialogProcessStartIcon #fIcon
 ss0 f4 expr out #txt
-ss0 f4 81 458 448 374 #arcP
-ss0 f4 1 264 458 #addKink
-ss0 f4 0 0.9011575100918972 0 0 #arcLabel
+ss0 f4 65 466 816 374 #arcP
+ss0 f4 1 816 466 #addKink
+ss0 f4 0 0.21384428399469393 0 0 #arcLabel
 ss0 f45 type com.axonactive.test.system.ComposeEditTest.ComposeEditTestData #txt
 ss0 f45 355 1059 26 26 0 12 #rect
 ss0 f45 @|RichDialogProcessEndIcon #fIcon

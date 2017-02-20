@@ -77,7 +77,7 @@
 			<h:panelGroup>
 				<br />
 				<p:commandButton value="Save" actionListener="#{logic.saveQuestion}"
-					update=":form:theTable addEditQuestionDialog"
+					update=":form:theTable addEditQuestionDialog :form:btnSave"
 					oncomplete="validateToHide(args, PF('addEditQuestionDialog'));"
 					id="dialogSaveButton" />
 				<p:commandButton value="Cancel"

@@ -37,7 +37,7 @@
 				</h:panelGrid>
 
 
-				<p:commandButton update=":addEditQuestionDialog"
+				<p:commandButton update=":addEditQuestionDialog :form:btnSave"
 					actionListener="#{logic.btnAddClick}"
 					oncomplete="PF('addEditQuestionDialog').show()" value="Add"
 					style="height:40px;" id="dialogEditButton">
@@ -74,7 +74,7 @@
 						<p:outputLabel value="/" />
 						<p:commandButton value="Delete" ajax="true" process="@this"
 							actionListener="#{logic.deleteQuestion(question)}"
-							update=":form:theTable" id="deleteButton">
+							update=":form:theTable :form:btnSave" id="deleteButton">
 						</p:commandButton>
 					</p:column>
 
@@ -84,8 +84,8 @@
 				<p:commandButton actionListener="#{logic.close}" value="Close"
 					update="form" icon="ui-icon-check" />
 
-				<p:commandButton actionListener="#{logic.save}" value="Save"
-					update="form" icon="ui-icon-check" />
+				<p:commandButton actionListener="#{logic.save}" value="Save" id = 'btnSave'
+					update="form" icon="ui-icon-check" disabled="#{data.examinationModel.question.isEmpty()}" />
 
 			</h:form>
 
