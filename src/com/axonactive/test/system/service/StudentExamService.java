@@ -37,18 +37,6 @@ public class StudentExamService {
 
 	}
 
-	public static List<QuestionModel> getStudentAnswer(Integer examId) {
-		ExaminationModel exam = ExaminationService.findById(examId);
-
-		List<QuestionModel> questions = new ArrayList<QuestionModel>(
-				exam.getQuestion());
-		for (QuestionModel question : questions) {
-
-		}
-		return null;
-
-	}
-
 	public static boolean checkSingleAnswer(QuestionModel questionModel) {
 		return questionModel.getStudentAnswer().getIsCorrect();
 	}
@@ -169,36 +157,9 @@ public class StudentExamService {
 			List<StudentAnswerModel> studentAnswerModelList = StudentAnswerConverter
 					.convertSetToListModel(StudentAnswerConverter
 							.tosetModel(liststudentAnswerEntity));
-			Ivy.log().info("List size" + studentAnswerModelList.size());
-			if (questionEntity.getQuestionType() == 1) {
-				if (studentAnswerModelList != null
-						&& studentAnswerModelList.size() > 0) {
-					questionModel.setStudentAnswer(studentAnswerModelList
-							.get(0).getChoiceAnswer());
-				}
-
-			}
-			if (questionEntity.getQuestionType() == 2) {
-				if (studentAnswerModelList != null
-						&& studentAnswerModelList.size() > 0) {
-					List<ChoiceAnswerModel> choiceAnswers = studentAnswerModelList
-							.stream().map(item -> item.getChoiceAnswer())
-							.collect(Collectors.toList());
-					if (choiceAnswers != null && choiceAnswers.size() > 0) {
-						questionModel.setStudentAnswers(choiceAnswers);
-					}
-				}
-
-			}
-			if (questionEntity.getQuestionType() == 3) {
-				if (studentAnswerModelList != null
-						&& studentAnswerModelList.size() > 0) {
-					questionModel
-							.setStudentWritingAnswer(studentAnswerModelList
-									.get(0).getWrtingAnswer());
-				}
-
-			}
+			
+			getAnswerByQuestionType(questionEntity, questionModel,
+					studentAnswerModelList);
 			questionModels.add(questionModel);
 
 		}
@@ -207,6 +168,40 @@ public class StudentExamService {
 		examModel.setTotalQuestion(total);
 
 		return examModel;
+	}
+
+	private static void getAnswerByQuestionType(QuestionEntity questionEntity,
+			QuestionModel questionModel,
+			List<StudentAnswerModel> studentAnswerModelList) {
+		if (questionEntity.getQuestionType() == 1) {
+			if (studentAnswerModelList != null
+					&& studentAnswerModelList.size() > 0) {
+				questionModel.setStudentAnswer(studentAnswerModelList
+						.get(0).getChoiceAnswer());
+			}
+
+		}
+		if (questionEntity.getQuestionType() == 2) {
+			if (studentAnswerModelList != null
+					&& studentAnswerModelList.size() > 0) {
+				List<ChoiceAnswerModel> choiceAnswers = studentAnswerModelList
+						.stream().map(item -> item.getChoiceAnswer())
+						.collect(Collectors.toList());
+				if (choiceAnswers != null && choiceAnswers.size() > 0) {
+					questionModel.setStudentAnswers(choiceAnswers);
+				}
+			}
+
+		}
+		if (questionEntity.getQuestionType() == 3) {
+			if (studentAnswerModelList != null
+					&& studentAnswerModelList.size() > 0) {
+				questionModel
+						.setStudentWritingAnswer(studentAnswerModelList
+								.get(0).getWrtingAnswer());
+			}
+
+		}
 	}
 
 	public static int calculateStudentAnswer(Set<QuestionModel> questionModels) {
