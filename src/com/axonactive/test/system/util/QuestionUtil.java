@@ -34,12 +34,14 @@ public class QuestionUtil {
 		case 1: {
 			char c = rightAnswer.charAt(0);
 			correctAnswerIndexs.add(QuestionUtil.getIndexFromChar(c));
+			break;
 		}
 
 		case 2: {
 			correctAnswerIndexs = QuestionUtil
 					.getIndexsFromMultipleChoice(rightAnswer);
 		}
+			break;
 		}
 
 		return correctAnswerIndexs;
