@@ -32,7 +32,9 @@
 						jsf:rendered="#{data.examination.isClosed ne true}">
 						<p:commandButton styleClass="btn btn-default pull-right"
 							actionListener="#{logic.editTest}"
-							value="#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamResult/Edit')}"></p:commandButton>
+							value="#{ivy.cms.co('/Dialogs/com/axonactive/test/system/ExamResult/Edit')}"
+							rendered="#{cc.attrs.results.size() eq 0}"
+							></p:commandButton>
 						<p:commandButton update="@form"
 							styleClass="btn btn-danger pull-right"
 							actionListener="#{logic.closeTest}"
