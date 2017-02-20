@@ -220,7 +220,12 @@ public class StudentExamService {
 				}
 			}
 			if (questionModel.getQuestionType() == 2) {
-				countUserAnswer = questionModel.getStudentAnswers().size();
+				countUserAnswer += 1;
+			}
+			if (questionModel.getQuestionType() == 3) {
+				if(!questionModel.getStudentWritingAnswer().isEmpty() && questionModel.getStudentWritingAnswer() != null){
+					countWritingAnswer += 1;
+				}
 			}
 		}
 		return countStudentAnswer + countUserAnswer + countWritingAnswer;
