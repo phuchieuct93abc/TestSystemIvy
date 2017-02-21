@@ -1,5 +1,5 @@
 [Ivy]
-[>Created: Thu Feb 16 09:02:42 ICT 2017]
+[>Created: Mon Feb 20 14:35:54 ICT 2017]
 15A3C3824F3FFF42 3.19 #module
 >Proto >Proto Collection #zClass
 St0 Start Big #zClass
@@ -46,7 +46,7 @@ St0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 </elementInfo>
 ' #txt
 St0 f0 @C|.responsibility Everybody #txt
-St0 f0 1 113 30 30 -21 17 #rect
+St0 f0 73 121 30 30 -21 17 #rect
 St0 f0 @|StartRequestIcon #fIcon
 St0 f3 targetWindow NEW #txt
 St0 f3 targetDisplay TOP #txt
@@ -71,10 +71,10 @@ St0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-St0 f3 88 106 112 44 -31 -8 #rect
+St0 f3 160 114 112 44 -31 -8 #rect
 St0 f3 @|RichDialogIcon #fIcon
 St0 f4 expr out #txt
-St0 f4 31 128 88 128 #arcP
+St0 f4 103 136 160 136 #arcP
 St0 f15 actionDecl 'com.axonactive.test.system.StartProcessData out;
 ' #txt
 St0 f15 actionTable 'out=in;
@@ -94,17 +94,17 @@ St0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-St0 f15 310 106 112 44 -24 -8 #rect
+St0 f15 382 114 112 44 -24 -8 #rect
 St0 f15 @|StepIcon #fIcon
 St0 f17 type com.axonactive.test.system.StartProcessData #txt
-St0 f17 462 112 32 32 0 16 #rect
+St0 f17 654 120 32 32 0 16 #rect
 St0 f17 @|AlternativeIcon #fIcon
 St0 f18 expr out #txt
-St0 f18 422 128 462 128 #arcP
+St0 f18 494 136 654 136 #arcP
 St0 f5 expr out #txt
-St0 f5 200 128 310 128 #arcP
+St0 f5 272 136 382 136 #arcP
 St0 f2 type com.axonactive.test.system.StartProcessData #txt
-St0 f2 801 113 30 30 0 15 #rect
+St0 f2 993 121 30 30 0 15 #rect
 St0 f2 @|EndIcon #fIcon
 St0 f1 targetWindow NEW #txt
 St0 f1 targetDisplay TOP #txt
@@ -128,7 +128,7 @@ St0 f1 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-St0 f1 552 42 112 44 -41 -8 #rect
+St0 f1 768 50 112 44 -41 -8 #rect
 St0 f1 @|RichDialogIcon #fIcon
 St0 f7 expr in #txt
 St0 f7 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -140,8 +140,8 @@ St0 f7 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-St0 f7 483 117 552 64 #arcP
-St0 f7 1 504 64 #addKink
+St0 f7 676 126 768 72 #arcP
+St0 f7 1 704 72 #addKink
 St0 f7 0 0.7170634191726583 0 0 #arcLabel
 St0 f10 targetWindow NEW #txt
 St0 f10 targetDisplay TOP #txt
@@ -165,7 +165,7 @@ St0 f10 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-St0 f10 552 170 112 44 -43 -8 #rect
+St0 f10 768 178 112 44 -43 -8 #rect
 St0 f10 @|RichDialogIcon #fIcon
 St0 f11 expr in #txt
 St0 f11 outCond in.role.getName().equalsIgnoreCase("teacher") #txt
@@ -178,17 +178,17 @@ St0 f11 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-St0 f11 483 139 552 192 #arcP
-St0 f11 1 504 192 #addKink
-St0 f11 1 0.03682726149089917 0 0 #arcLabel
+St0 f11 676 146 768 200 #arcP
+St0 f11 1 704 200 #addKink
+St0 f11 1 0.03682726149089918 0 0 #arcLabel
 St0 f6 expr out #txt
-St0 f6 664 64 805 117 #arcP
-St0 f6 1 752 64 #addKink
-St0 f6 0 0.944609802295876 0 0 #arcLabel
+St0 f6 880 72 996 126 #arcP
+St0 f6 1 936 72 #addKink
+St0 f6 0 0.20318933982938897 0 0 #arcLabel
 St0 f8 expr out #txt
-St0 f8 664 192 805 138 #arcP
-St0 f8 1 752 192 #addKink
-St0 f8 0 0.9464452542607023 0 0 #arcLabel
+St0 f8 880 200 996 145 #arcP
+St0 f8 1 936 200 #addKink
+St0 f8 0 0.20391438449800542 0 0 #arcLabel
 >Proto St0 .type com.axonactive.test.system.StartProcessData #txt
 >Proto St0 .processKind NORMAL #txt
 >Proto St0 0 0 32 24 18 0 #rect

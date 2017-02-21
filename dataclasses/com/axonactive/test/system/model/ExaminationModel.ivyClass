@@ -30,3 +30,5 @@ score Integer #field
 score PERSISTENT #fieldModifier
 isTested Boolean #field
 isTested PERSISTENT #fieldModifier
+validatingResult java.util.List<com.axonactive.test.system.model.ResultModel> #field
+validatingResult PERSISTENT #fieldModifier

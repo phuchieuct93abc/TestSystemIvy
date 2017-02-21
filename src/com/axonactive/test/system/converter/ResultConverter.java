@@ -23,6 +23,7 @@ public class ResultConverter {
 		model.setUsername(entity.getUsername());
 		model.setIsPassed(entity.getIsPassed());
 		model.setId(entity.getId());
+		model.setIsValidated(entity.getIsValidated());
 		return model;
 
 	}
@@ -39,6 +40,7 @@ public class ResultConverter {
 		Set<ResultEntity> resultList = new HashSet<>();
 		resultList.add(entity);
 		examinationEntity.setResults(resultList);
+		entity.setIsValidated(model.getIsValidated());
 		return entity;
 
 	}

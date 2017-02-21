@@ -47,6 +47,7 @@ public class ResultService {
 
 		ResultEntity entity = ResultDAO.findById(resultId);
 		entity.setIsPassed(isPassed);
+		entity.setIsValidated(true);
 		ResultDAO.update(entity);
 
 	}
@@ -94,6 +95,7 @@ public class ResultService {
 		resultModel.setTakenDate(Calendar.getInstance().getTime());
 		resultModel.setUsername(username);
 		resultModel.setExam(exam);
+		resultModel.setIsValidated(false);
 		return resultModel;	
 		
 		

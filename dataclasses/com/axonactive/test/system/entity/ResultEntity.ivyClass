@@ -19,3 +19,5 @@ takenDate java.util.Date #field
 takenDate PERSISTENT #fieldModifier
 isPassed Boolean #field
 isPassed PERSISTENT #fieldModifier
+isValidated Boolean #field
+isValidated PERSISTENT #fieldModifier

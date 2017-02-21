@@ -12,3 +12,5 @@ isPassed Boolean #field
 isPassed PERSISTENT #fieldModifier
 exam com.axonactive.test.system.model.ExaminationModel #field
 exam PERSISTENT #fieldModifier
+isValidated Boolean #field
+isValidated PERSISTENT #fieldModifier

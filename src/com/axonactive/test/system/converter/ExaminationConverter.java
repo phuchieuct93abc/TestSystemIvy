@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.map.HashedMap;
 
 import ch.ivyteam.ivy.environment.Ivy;
 
@@ -23,23 +24,29 @@ public class ExaminationConverter {
 		model.setTitle(entity.getTitle());
 		model.setId(entity.getId());
 		model.setDuration(entity.getDuration());
-		//model.setQuestion(QuestionConverter.settoModel(entity.getQuestions()));
 		model.setTime(entity.getTime());
 		model.setPassPercentage(entity.getPassPercentage());
 		model.setIsReadyForTest(entity.getIsReadyForTest());
-		if(CollectionUtils.isNotEmpty(entity.getResults())){
-			
+		if (CollectionUtils.isNotEmpty(entity.getResults())) {
+
 			List<ResultEntity> results = new ArrayList(entity.getResults());
 			model.setResult(ResultConverter.listModel(results));
+
+			model.setValidatingResult(model.getResult().stream()
+					.filter(item -> !item.getIsValidated())
+					.collect(Collectors.toList()));
+
 		}
 
 		Set<QuestionModel> questions = QuestionConverter.listModel(entity
 				.getQuestions());
 		model.setQuestion(questions);
-		// for (QuestionModel questionModel : questions) {
-		// model.getQuestionMap().put(questionModel.getId(), questionModel);
-		// }
+		model.setQuestionMap(new HashedMap());
+		for (QuestionModel questionModel : questions) {
+			model.getQuestionMap().put(questionModel.getId(), questionModel);
+		}
 		model.setIsClosed(entity.getIsClosed());
+
 		return model;
 
 	}
